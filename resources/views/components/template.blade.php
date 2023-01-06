@@ -40,9 +40,6 @@
             </div>
         </nav>
         {{ $slot }}
-        <br></br>
-        <br></br>
-        <br></br>
         <footer class="p-4 bg-blackblue sm:p-6 dark:bg-gray-900 sticky top-[100vh]">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
