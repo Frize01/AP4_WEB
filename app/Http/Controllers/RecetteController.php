@@ -13,9 +13,10 @@ class RecetteController extends Controller
 
     }
     function listeIngrediant($id){
-        $stock = STOCK::where('id',$id);
-        return response()->json($stock->join('ingrediant','ingrediant.id_ingrediant','=','stock.id_ingrediant')->get("nom_ingrediant"));
+        $stock = STOCK::where('id_ingrediant',$id);
+        return response()->json($stock->join('INGREDIANT','INGREDIANT.id_ingredant','=','STOCK.id_ingredant')->get("nom_ingrediant"));
     }
+
     function listeAllergene($id){
         return response()->json(RECETTE::all());
     }
@@ -24,3 +25,6 @@ class RecetteController extends Controller
         return response()->json(RECETTE::all());
     }
 }
+
+
+
