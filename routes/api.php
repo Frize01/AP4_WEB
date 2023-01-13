@@ -42,7 +42,7 @@ Route::get('/recette/{id}', [RecetteController::class, "infoRecette"]);
 Route::get('/recette/{id}/ingrediants', [RecetteController::class, "listeIngrediant"]);
 Route::get('/recette/{id}/allergenes', [RecetteController::class, "listeAllergene"]);
 Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategorieRecette"]);
-Route::get('/recette/categories', [RecetteController::class, "listeCategorie"]);
+Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategorie"]);
 
 
 //Client

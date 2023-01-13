@@ -27,7 +27,9 @@ class RecetteController extends Controller
         return response()->json(RECETTE::all());
     }
 
-    function listeCategorie(){
-        return response()->json(RECETTE::all());
+    function listeCategorie($id){
+        return response()->json(RECETTE::where('RECETTE.id_categorie',$id)
+        ->join('CATEGORIE','CATEGORIE.id_categorie',"=","RECETTE.id_recette")
+        ->get("libelle_categorie"));
     }
 }
