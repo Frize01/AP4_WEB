@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property CATEGORIE $c_a_t_e_g_o_r_i_e
  * @property RESTAURANT $r_e_s_t_a_u_r_a_n_t
  * @property Collection|COMPOSER[] $c_o_m_p_o_s_e_r_s
- * @property Collection|CONTENIR[] $c_o_n_t_e_n_i_r_s
+ * @property Collection|CONTIENT[] $c_o_n_t_i_e_n_t_s
  * @property Collection|DEFINIR[] $d_e_f_i_n_i_r_s
  *
  * @package App\Models
@@ -64,9 +64,9 @@ class RECETTE extends Model
 		return $this->hasMany(COMPOSER::class, 'ID_RESTAURANT');
 	}
 
-	public function c_o_n_t_e_n_i_r_s()
+	public function c_o_n_t_i_e_n_t_s()
 	{
-		return $this->hasMany(CONTENIR::class, 'ID_RESTAURANT');
+		return $this->hasMany(CONTIENT::class, 'ID_RESTAURANT');
 	}
 
 	public function d_e_f_i_n_i_r_s()

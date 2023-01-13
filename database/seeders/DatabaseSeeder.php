@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         RESTAURANT::factory()->count(10)->create();
+        User::factory()->count(50)->create();
     }
 }

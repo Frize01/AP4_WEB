@@ -8,9 +8,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 /**
  * Class RESTAURANT
@@ -34,7 +31,6 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class RESTAURANT extends Model
 {
-	use HasApiTokens, HasFactory, Notifiable;
 	protected $table = 'RESTAURANT';
 	protected $primaryKey = 'ID_RESTAURANT';
 	public $timestamps = false;

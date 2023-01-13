@@ -20,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property INGREDIANT $i_n_g_r_e_d_i_a_n_t
  * @property RESTAURANT $r_e_s_t_a_u_r_a_n_t
  * @property Collection|CONSERNER[] $c_o_n_s_e_r_n_e_r_s
- * @property Collection|CONTENIR[] $c_o_n_t_e_n_i_r_s
  * @property Collection|LIVRER[] $l_i_v_r_e_r_s
  *
  * @package App\Models
@@ -56,11 +55,6 @@ class STOCK extends Model
 	public function c_o_n_s_e_r_n_e_r_s()
 	{
 		return $this->hasMany(CONSERNER::class, 'ID_RESTAURANT');
-	}
-
-	public function c_o_n_t_e_n_i_r_s()
-	{
-		return $this->hasMany(CONTENIR::class, 'ID_RESTAURANT_1');
 	}
 
 	public function l_i_v_r_e_r_s()
