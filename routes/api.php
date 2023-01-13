@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecetteController;
 
 /*
@@ -22,10 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/test', function (Request $request) {
-    $data = array("a" => "Apple", "b" => "Ball", "c" => "Cat","test" => 12,"test2"=>array("test"=>54,));
-
-    header("Content-Type: application/json");
-    return response()->json($data);
+    return Http::get('https://api.bobross.dev/api')['quote']->json(0);
+    //header("Content-Type: application/json");
+    //return response()->json($data);
+    //return response()->json($data);
 });
 
 //Global
@@ -38,7 +39,6 @@ Route::get('/restaurants', [GlobalController::class, "listeRestaurant"]);
 
 //Recette
 Route::get('/recette/{id}', [RecetteController::class, "infoRecette"]);
-
 Route::get('/recette/{id}/ingrediants', [RecetteController::class, "listeIngrediant"]);
 Route::get('/recette/{id}/allergenes', [RecetteController::class, "listeAllergene"]);
 Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategorieRecette"]);

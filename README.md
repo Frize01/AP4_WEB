@@ -5,11 +5,18 @@
 
 
 ## Sommaire
-1. [Les API](#explication-des-api)
+1. [Information](#information)
+2. [Recevoir des données avec les api](#explication-des-api)
     - [Api Clients](#client)
     - [Api Recettes](#recette)
     - [Api Restaurant](#restaurant)
     - [Api Global](#global)
+3. [Envoyer des données avec les api](#Envoie-de-données)
+
+---
+# Information
+
+Cette api a été developer avec php en utilisant le framework [laravel](https://laravel.com/)
 
 ---
 # Explication des api
@@ -45,3 +52,6 @@
 |Api | Réponse|Disponibilité |
 |---|---|---|
 ||||
+
+---
+# Envoie de données
