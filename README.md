@@ -24,7 +24,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |Api | Réponse| Disponibilité |
 |---|---|---|
 | api/clients | liste des clients |<i class="bi bi-check-lg"></i>|
-| api/{id client}/favori | liste des favoris du client |<i class="bi bi-check-lg"></i>|
+| api/client/{id client}/favori | liste des favoris du client |<i class="bi bi-check-lg"></i>|
 | api/client/{idClient}/commandes| liste des commandes du client|<i class="bi bi-check-lg"></i>|
 
 ---
@@ -34,8 +34,8 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |---|---|---|
 | api/Recettes|liste de toute les recettes||
 | api/recette/categories| liste des catégories disponible||
-| api/{id Recette} | les information d'une rectte en particuliére |<i class="bi bi-check-lg"></i>|
-| api/{id Recette}/ingrediants | liste des ingrediant présent dans la recette||
+| api/recette/{id Recette} | les information d'une rectte en particuliére |<i class="bi bi-check-lg"></i>|
+| api/{id Recette}/ingrediants | liste des ingrediant présent dans la recette|<i class="bi bi-check-lg"></i>|
 | api/recette/{id}/allergenes| liste des alergenes dans la recette||
 |api/{id Recette}|liste des catégorie qui est lier a cette recette||
 

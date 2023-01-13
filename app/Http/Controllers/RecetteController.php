@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class RecetteController extends Controller
 {
     function infoRecette($id){
-
+        return response()->json(RECETTE::all());
     }
     function listeIngrediant($id){
         $stock = STOCK::where('id_ingrediant',$id);
