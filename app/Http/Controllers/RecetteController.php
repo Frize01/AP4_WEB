@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\STOCK;
 use App\Models\RECETTE;
-use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use App\Models\CATEGORIE;
-use App\Models\INGREDIANT;
-use Error;
 
 class RecetteController extends Controller
 {
@@ -27,7 +24,7 @@ class RecetteController extends Controller
     }
 
     function listeCategorie(){
-        return response()->json(RECETTE::all());
+        return response()->json(CATEGORIE::all());
     }
 
     function listeAllergene($id){

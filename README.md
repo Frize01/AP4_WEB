@@ -33,7 +33,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |Api | Réponse|Disponibilité |
 |---|---|---|
 | api/recettes|liste de toute les recettes|✅|
-| api/recette/categories| liste des catégories disponible||
+| api/recette/categories| liste des catégories disponible|✅|
 | api/recette/{id Recette} | les information d'une rectte en particuliére |✅|
 | api/{id Recette}/ingrediants | liste des ingrediant présent dans la recette|✅|
 | api/recette/{id Recette}/allergenes| liste des alergenes dans la recette||
