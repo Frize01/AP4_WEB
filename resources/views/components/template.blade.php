@@ -4,11 +4,60 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ration</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                    'blueharmony': '#8FBCBB',
+                    'lightblue': '#88C0D0',
+                    'frostblue': '#81A1C1',
+                    'blackblue' :'#5E81AC',
+                    'snowlightgray' : "#D8DEE9",
+                    "black": "colors.black",
+                    "white": "colors.white",
+                    "gray": "colors.gray",
+                    "emerald": "colors.emerald",
+                    "indigo": "colors.indigo",
+                    "yellow": "colors.yellow",
+                    },
+                    backgroundColor: {
+                    'blueharmony': '#8FBCBB',
+                    'lightblue': '#88C0D0',
+                    'frostblue': '#81A1C1',
+                    'blackblue' :'#5E81AC',
+                    'snowlightgray' : "#D8DEE9",
+                    "black": "colors.black",
+                    "white": "colors.white",
+                    "gray": "colors.gray",
+                    "emerald": "colors.emerald",
+                    "indigo": "colors.indigo",
+                    "yellow": "colors.yellow",
+                    },
+                }
+            }
+            }
+  </script>
         <link rel="shortcut icon" href="{{ asset('images/logo-ration-t.png') }}" />
         @vite('resources/css/app.css')
     </head>
-    <body class="bg-snowlightgray">
-        <nav class="bg-white px-2 sm:px-4 py-2.5 bg-blackblue fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 rounded-b-xl">
+    @php
+        if(isset($background))
+        {
+            $bg=$background;
+            $couleur=$color;
+            $bgArriere=$background;
+
+        }
+        else {
+            $bg="white";
+            $bgArriere="snowgray";
+            $couleur="blackblue";
+        }
+    @endphp
+    <body class="snowgray">
+        <nav class="bg-[{{$bg}}] px-2 sm:px-4 py-2.5 bg-[{{$couleur}}] fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="http://127.0.0.1:8000/" class="flex items-center">
                     <img src="{{ asset('images/logo-ration-t.png') }}" class="h-9 mr-3 xl:h-16" alt="Ration logo" />
@@ -21,26 +70,26 @@
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-2 dark:text-white hover:bg-frostblue" aria-current="page">Accueil</a>
+                            <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-2 dark:text-white hover:bg-[{{$bg}}]" aria-current="page">Accueil</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-frostblue" >Qui sommes-nous ?</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-[{{$bg}}]" >Qui sommes-nous ?</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-frostblue">Services</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-[{{$bg}}]">Services</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-frostblue" >Restaurants</a>
+                            <a href="/restaurant" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-[{{$bg}}]" >Restaurants</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-frostblue">Contact</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:bg-{{$bg}}">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         {{ $slot }}
-        <footer class="p-4 bg-blackblue sm:p-6 dark:bg-gray-900 sticky top-[100vh]">
+        <footer class="p-4 bg-[{{$couleur}}] sm:p-6 dark:bg-gray-900 sticky top-[100vh]">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="http://127.0.0.1:8000/" class="flex items-center">

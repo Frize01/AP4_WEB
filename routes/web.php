@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\restaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/restaurant', [restaurantController::class, 'Restaurantlist']);
+Route::get('/template', [restaurantController::class, 'RestaurantTemplate']);
+Route::get('/restaurant/{id}', [restaurantController::class, 'RestaurantTemplate']);

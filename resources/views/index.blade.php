@@ -27,44 +27,46 @@
       <p class="font-normal text-gray-700 dark:text-gray-400">Que voys soyez plus Italien, Asiatique ou Français, vous pourrez trouver des restaurants qui vous transporeront dans leur culture et leur histoire.</p>
     </div>
 </div>
-  <br></br>
-  <div id="default-carousel" class="relative" data-carousel="static">
-    <!-- Carousel wrapper -->
-      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-          <!-- Item 1 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-              <img src="https://static.actu.fr/uploads/2019/10/72289257_2798725936827675_5049582522942357504_n-960x640.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          </div>
-          <!-- Item 2 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <img src="https://thegoodlife.fr/wp-content/uploads/sites/2/2021/09/food-trip-bretagne-adresses-insert-02.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          </div>
-          <!-- Item 3 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <img src="https://www.finedininglovers.fr/sites/g/files/xknfdk1291/files/styles/article_1200_800_fallback/public/fdl_content_import_scripts/Original_4066_bp-lesglazicks-salle-015_0.jpg?itok=rX1052IX" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          </div>
+<section class="overflow-hidden text-gray-700 ">
+  <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+    <div class="flex flex-wrap -m-1 md:-m-2">
+      <div class="flex flex-wrap w-1/3">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+            src="https://static.actu.fr/uploads/2019/10/72289257_2798725936827675_5049582522942357504_n-960x640.jpg">
+        </div>
       </div>
-      <!-- Slider indicators -->
-      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+      <div class="flex flex-wrap w-1/3">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+            src="https://thegoodlife.fr/wp-content/uploads/sites/2/2021/09/food-trip-bretagne-adresses-insert-02.jpg">
+        </div>
       </div>
-      <!-- Slider controls -->
-      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-              <span class="sr-only">Previous</span>
-          </span>
-      </button>
-      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-              <span class="sr-only">Next</span>
-          </span>
-      </button>
+      <div class="flex flex-wrap w-1/3">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+            src="https://media-cdn.tripadvisor.com/media/photo-s/14/9f/e7/a1/le-bretagne.jpg">
+        </div>
+      </div>
+      <div class="flex flex-wrap w-full">
+      <br></br>
+    </div>
+      <div class="flex flex-wrap w-1/2">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+            src="https://media-cdn.tripadvisor.com/media/photo-s/1a/1a/48/1b/salle-de-restaurant.jpg">
+        </div>
+      </div>
+      <div class="flex flex-wrap w-1/2">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+            src="https://www.assiettesgourmandes.fr/wp-content/uploads/2020/03/restaurant-Anne-de-Bretagne-2.jpg">
+        </div>
+      </div>
   </div>
+</div>
+</section>
+<br></br>
 
   
 </x-template>
