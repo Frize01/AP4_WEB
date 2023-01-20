@@ -46,7 +46,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |Api | Réponse|Disponibilité |
 |---|---|---|
 | api/restaurants | liste des restaurant |✅|
-| api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant ||
+| api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant |✅|
 
 ---
 
