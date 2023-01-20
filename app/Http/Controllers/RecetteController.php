@@ -6,13 +6,16 @@ use App\Models\STOCK;
 use App\Models\RECETTE;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CATEGORIE;
 use App\Models\INGREDIANT;
+use Error;
 
 class RecetteController extends Controller
 {
     function infoRecette($id){
-        return response()->json(RECETTE::all());
+        return response()->json(RECETTE::where('RECETTE.ID_RECETTE', $id)->get());
     }
+
     function listeIngrediant($id){
 
         return response()->json(
@@ -23,13 +26,24 @@ class RecetteController extends Controller
         
     }
 
+    function listeCategorie(){
+        return response()->json(RECETTE::all());
+    }
+
     function listeAllergene($id){
         return response()->json(RECETTE::all());
     }
 
-    function listeCategorie($id){
-        return response()->json(RECETTE::where('RECETTE.id_categorie',$id)
-        ->join('CATEGORIE','CATEGORIE.id_categorie',"=","RECETTE.id_recette")
-        ->get("libelle_categorie"));
+    function listeCategorieRecette($id){
+        return response()->json(
+            RECETTE::where('RECETTE.ID_CATEGORIE',$id)
+            ->join('CATEGORIE','CATEGORIE.ID_CATEGORIE','=','RECETTE.ID_CATEGORIE')
+            ->get("LIBELLE_CATEGORIE")
+        );
+    }
+
+    function listeRecette()
+    {
+        return response()->json(RECETTE::all());
     }
 }
