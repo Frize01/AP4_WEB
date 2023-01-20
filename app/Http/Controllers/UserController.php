@@ -22,4 +22,8 @@ class UserController extends Controller
     {
         return response()->json(COMMANDE::where('id', $idClient)->get());
     }
+    function UsersInfo($idClient)
+    {
+        return response()->json(User::where("id",$idClient)->get());
+    }
 }

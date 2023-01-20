@@ -16,4 +16,9 @@ class RestaurantController extends Controller
     {
         return response()->json(RECETTE::where("RECETTE.ID_RESTAURANT",$id)->get());
     }
+    function RestaurantInfo($id)
+    {
+        return response()->json(RESTAURANT::where("RESTAURANT.ID_RESTAURANT",$id)->get());
+
+    }
 }

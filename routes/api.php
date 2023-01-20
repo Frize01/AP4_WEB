@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //restaurants
 Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
+Route::get('/restaurant/{id}', [RestaurantController::class, "RestaurantInfo"]);
 Route::get('/restaurant/{id}/recettes/', [RestaurantController::class, "RecetteDansRestaurant"]);
 
 //Recette
@@ -38,5 +39,6 @@ Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategori
 
 //Client
 Route::get('/clients/', [UserController::class, "listeUsers"]);
+Route::get('/client/{idClient}', [UserController::class, "UsersInfo"]);
 Route::get('/client/{idClient}/favori', [UserController::class, "listeFavori"]);
 Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommande"]);

@@ -24,6 +24,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |Api | Réponse| Disponibilité |
 |---|---|---|
 | api/clients | liste des clients |✅|
+| api/client/{idClient}| Information d'un client|✅|
 | api/client/{id client}/favori | liste des favoris du client |✅|
 | api/client/{idClient}/commandes| liste des commandes du client|✅|
 
@@ -46,6 +47,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |Api | Réponse|Disponibilité |
 |---|---|---|
 | api/restaurants | liste des restaurant |✅|
+| api/restaurant/{id Restaurant} | Information d'un restaurant |✅|
 | api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant |✅|
 
 ---
