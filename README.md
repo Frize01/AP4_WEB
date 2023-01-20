@@ -39,13 +39,16 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 | api/recette/{id Recette}/allergenes| liste des alergenes dans la recette||
 |api/recette/{id Recette}/categorie|liste des catégorie qui est lier a cette recette|✅|
 
-
+---
 
 ## Restaurant
 
 |Api | Réponse|Disponibilité |
 |---|---|---|
 | api/restaurants | liste des restaurant |✅|
+| api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant ||
+
+---
 
 ## Global
 > Les api "Global" represente les api que je n'ai pas classer dans une catégorie particuliére

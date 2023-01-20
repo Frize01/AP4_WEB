@@ -24,10 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Global
 
-//mauvaise idee peut etre les redistribuer vers les vrais categorie
-Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
-
 //restaurants
+Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
+Route::get('/restaurant/{id}/recettes/', [RestaurantController::class, "RecetteDansRestaurant"]);
 
 //Recette
 Route::get('/recettes', [RecetteController::class, "listeRecette"]);
