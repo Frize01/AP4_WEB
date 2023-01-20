@@ -26,4 +26,14 @@ class UserController extends Controller
     {
         return response()->json(User::where("id",$idClient)->get());
     }
+    function listeNonPayerCommande($idClient)
+    {
+        error_log(COMMANDE::where('ID',"=", $idClient)
+        ->where('DATE_REGLEMENT_COMMANDE',"!=",null)
+        ->toSql());
+
+        return response()->json(COMMANDE::where('ID',"=", $idClient)
+        ->where('DATE_REGLEMENT_COMMANDE',"=",null)
+        ->get());
+    }
 }

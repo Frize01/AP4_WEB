@@ -27,6 +27,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 | api/client/{idClient}| Information d'un client|✅|
 | api/client/{id client}/favori | liste des favoris du client |✅|
 | api/client/{idClient}/commandes| liste des commandes du client|✅|
+| api/client/{idClient}/NonPayerCommandes| liste des commandes non payer du client|✅|
 
 ---
 ## Recette
