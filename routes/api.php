@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Global
+//Recuperer les données
 
 //restaurants 
 Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
@@ -45,3 +45,9 @@ Route::get('/client/{idClient}', [UserController::class, "UsersInfo"]);
 Route::get('/client/{idClient}/favori', [UserController::class, "listeFavori"]);
 Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommande"]);
 Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "listeNonPayerCommande"]);
+
+// ajout de données dans la bdd
+
+//Commande
+
+Route::post('/commande', [CommandeController::class, "ajouterCommande"]);

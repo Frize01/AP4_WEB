@@ -67,8 +67,8 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 
 ## Commande
 
-|Api |paramètre |Disponibilité |
-|---|---|---|
-|Creation commande a emporter|||
-|Creation commande sur place|||
-||||
+|Api |paramètre| Réponse |Disponibilité |
+|---|---|---|---|
+|||Creation commande a emporter||
+|||Creation commande sur place||
+|||||
