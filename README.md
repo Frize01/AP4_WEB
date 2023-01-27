@@ -40,6 +40,8 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 | api/{id Recette}/ingrediants | liste des ingrediant présent dans la recette|✅|
 | api/recette/{id Recette}/allergenes| liste des alergenes dans la recette||
 |api/recette/{id Recette}/categorie|liste des catégorie qui est lier a cette recette|✅|
+|api/recette/restaurant/{id Restaurant}|liste les recette lier a un resaturant|✅|
+
 
 ---
 
@@ -62,3 +64,11 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 
 ---
 # Envoie de données
+
+## Commande
+
+|Api |paramètre |Disponibilité |
+|---|---|---|
+|Creation commande a emporter|||
+|Creation commande sur place|||
+||||

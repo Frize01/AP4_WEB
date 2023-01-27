@@ -39,6 +39,14 @@ class RecetteController extends Controller
         );
     }
 
+    function listeRecetteRestaurant($id)
+    {
+        return response()->json(
+            RECETTE::select('RECETTE.ID_RECETTE','RECETTE.ID_CATEGORIE','RECETTE.NOM_RECETTE','RECETTE.DESCRIPTION_RECETTE','RECETTE.PHOTO_RECETTE','RECETTE.PRIXHT')
+            ->join('RESTAURANT','RECETTE.id_restaurant','=','RESTAURANT.id_restaurant')
+            ->where('RESTAURANT.id_restaurant',$id)
+            ->get("ID_RECETTE"));
+    }
     function listeRecette()
     {
         return response()->json(RECETTE::all());

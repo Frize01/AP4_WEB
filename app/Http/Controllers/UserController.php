@@ -12,7 +12,11 @@ class UserController extends Controller
 {
     function listeUsers()
     {
-        return response()->json(User::all());
+        return response()->json(
+            User::join('CLIENT','CLIENT.id','=','USERS.id')
+            ->whereRaw('CLIENT.id = USERS.id')
+            ->get()
+        );
     }
     function listeFavori($idClient)
     {
