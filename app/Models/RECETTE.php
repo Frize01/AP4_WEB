@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Model;
 class RECETTE extends Model
 {
 	protected $table = 'RECETTE';
+	protected $primaryKey = 'ID_RESTAURANT';
 	public $incrementing = false;
 	public $timestamps = false;
 

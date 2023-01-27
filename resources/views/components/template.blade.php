@@ -52,12 +52,12 @@
         }
         else {
             $bg="white";
-            $bgArriere="snowgray";
-            $couleur="blackblue";
+            $bgArriere="#D8DEE9";
+            $couleur="#5E81AC";
         }
     @endphp
-    <body class="snowgray">
-        <nav class="bg-[{{$bg}}] px-2 sm:px-4 py-2.5 bg-[{{$couleur}}] fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <body class="bg-snowgray">
+        <nav class="px-2 sm:px-4 py-2.5 bg-[{{$couleur}}] fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="http://127.0.0.1:8000/" class="flex items-center">
                     <img src="{{ asset('images/logo-ration-t.png') }}" class="h-9 mr-3 xl:h-16" alt="Ration logo" />

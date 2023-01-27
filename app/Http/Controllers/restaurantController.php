@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Recette;
 class restaurantController extends Controller
 {
     function Restaurantlist(){
@@ -11,7 +12,13 @@ class restaurantController extends Controller
     }
 
     function RestaurantTemplate($id){
-        return view('site_restaurant',["restaurant" => RESTAURANT::find($id)]);
+        $restaurant = RESTAURANT::find($id);
+        $recette = RECETTE::where('ID_RESTAURANT', $id)->get();
+        if ($restaurant===NULL)
+        {
+            return redirect("/restaurant");
+        }
+        return view('site_restaurant',["restaurant" => $restaurant, "recette" => $recette]);
     }
 
 }
