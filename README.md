@@ -54,15 +54,6 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 | api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant |✅|
 
 ---
-
-## Global
-> Les api "Global" represente les api que je n'ai pas classer dans une catégorie particuliére
-
-|Api | Réponse|Disponibilité |
-|---|---|---|
-||||
-
----
 # Envoie de données
 
 ## Commande
