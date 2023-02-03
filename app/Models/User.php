@@ -3,13 +3,18 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\STAFF;
+use App\Models\CLIENT;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\SERVEUR;
+use App\Models\COMMANDE;
+use App\Models\ADMINISTRATEUR;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 /**
  * Class USER
@@ -31,8 +36,9 @@ use Laravel\Sanctum\HasApiTokens;
  *
  * @package App\Models
  */
-class USER extends Model
+class User extends Authenticatable
 {
+	use HasApiTokens, HasFactory, Notifiable;
 	protected $table = 'USERS';
 	protected $primaryKey = 'ID';
 	public $timestamps = false;
