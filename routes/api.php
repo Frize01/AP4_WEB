@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecetteController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\RestaurantController;
 
 /*
@@ -28,6 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
 Route::get('/restaurant/{id}', [RestaurantController::class, "RestaurantInfo"]);
 Route::get('/restaurant/{id}/recettes/', [RestaurantController::class, "RecetteDansRestaurant"]);
+Route::get('/restaurant/staff/{id}', [RestaurantController::class, "StaffRestaurant"]);
 
 //Recette
 Route::get('/recette/categories', [RecetteController::class, "listeCategorie"]);
@@ -38,7 +40,6 @@ Route::get('/recette/{id}/allergenes', [RecetteController::class, "listeAllergen
 Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategorieRecette"]);
 Route::get('/recette/restaurant/{id}', [RecetteController::class, "listeRecetteRestaurant"]);
 
-
 //Client
 Route::get('/clients/', [UserController::class, "listeUsers"]);
 Route::get('/client/{idClient}', [UserController::class, "UsersInfo"]);
@@ -46,6 +47,8 @@ Route::get('/client/{idClient}/favori', [UserController::class, "listeFavori"]);
 Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommande"]);
 Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "listeNonPayerCommande"]);
 
+
+//Staff
 // ajout de données dans la bdd
 
 //Commande
