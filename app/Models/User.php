@@ -28,11 +28,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property Carbon|null $CREATED_AT
  * @property Carbon|null $UPDATED_AT
  * 
- * @property ADMINISTRATEUR $a_d_m_i_n_i_s_t_r_a_t_e_u_r
- * @property CLIENT $c_l_i_e_n_t
- * @property Collection|COMMANDE[] $c_o_m_m_a_n_d_e_s
- * @property SERVEUR $s_e_r_v_e_u_r
- * @property STAFF $s_t_a_f_f
+ * @property ADMINISTRATEUR $administrateur
+ * @property CLIENT $client
+ * @property Collection|COMMANDE[] $commandes
+ * @property SERVEUR $serveur
+ * @property STAFF $staff
  *
  * @package App\Models
  */
@@ -64,22 +64,22 @@ class User extends Authenticatable
 		return $this->hasOne(ADMINISTRATEUR::class, 'ID');
 	}
 
-	public function c_l_i_e_n_t()
+	public function client()
 	{
 		return $this->hasOne(CLIENT::class, 'ID');
 	}
 
-	public function c_o_m_m_a_n_d_e_s()
+	public function commandes()
 	{
 		return $this->hasMany(COMMANDE::class, 'ID');
 	}
 
-	public function s_e_r_v_e_u_r()
+	public function serveur()
 	{
 		return $this->hasOne(SERVEUR::class, 'ID');
 	}
 
-	public function s_t_a_f_f()
+	public function staff()
 	{
 		return $this->hasOne(STAFF::class, 'ID');
 	}
