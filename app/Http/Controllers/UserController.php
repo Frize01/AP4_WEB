@@ -19,23 +19,22 @@ class UserController extends Controller
             ->get()
         );
     }
+
+
     function listeFavori($idClient)
     {
-        $listRest = response()->json(FAVORI::where('id', $idClient)->get('id_restaurant'));
+        $listRest = FAVORI::where('id', $idClient)->get('id_restaurant');
         $resp = [];
-        //$listRest2 = json_decode($listRest);
-        
-        error_log($listRest);
 
-        foreach($listRest as $key => $id)
+        foreach( $listRest as $id)
         {   
-            error_log($key);
-
-            $resto = response()->list(RESTAURANT::where("RESTAURANT.ID_RESTAURANT", $id["id_restaurant"])->get());
-            //array_push($resp,response()->list($resto[0]));
+            $resto = RESTAURANT::where("RESTAURANT.ID_RESTAURANT", $id["id_restaurant"])->get();
+            array_push($resp,$resto[0]);
         }
-        return $resp;
+        return ($resp);
     }
+
+
     function listeCommande($idClient)
     {
         return response()->json(COMMANDE::where('id', $idClient)->get());
