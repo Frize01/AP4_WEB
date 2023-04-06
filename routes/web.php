@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\restaurantController;
+use App\Http\Controllers\payementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/restaurant', [restaurantController::class, 'RestaurantList']);
 Route::get('/restaurant/{id}', [restaurantController::class, 'RestaurantTemplate']);
+Route::get('/payement', [payementController::class, 'payement']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

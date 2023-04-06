@@ -4,7 +4,7 @@
   <br></br>
   <div class="bg-frostblue border-black	border-2">
     <br></br>
-      <h2 class="mb-4 text-2xl ml-4 font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">Car vos repas méritent d'être connus.. Prenez Ration</h2>
+      <h2 class="mb-4 text-2xl ml-4 font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl">Car vos repas méritent d'être connus.. Prenez Ration</h2>
       <br></br>
       <button class="ml-6 bg-white border-2 font-bold py-2 px-4 rounded">Trouvez le restaurant qui vous correspond</button>
       <button class="ml-2 bg-white border-2 font-bold py-2 px-4 rounded">En savoir plus sur nos services</button>
@@ -14,17 +14,17 @@
   <br></br>
   <br></br>
   <div class="grid grid-flow-col gap-4 content-center	">
-    <div href="#" class="col-span-2 block ml-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Des restaurants pour tout les goûts</h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">Ration dispose d'une variété de restaurant qui vous attends pour déguster leurs plats !</p>
+    <div href="#" class="col-span-2 block ml-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Des restaurants pour tout les goûts</h5>
+      <p class="font-normal text-gray-700">Ration dispose d'une variété de restaurant qui vous attends pour déguster leurs plats !</p>
     </div>
-    <div href="#" class="col-span-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Une équipe active</h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">Notre équipe est active et agit dans le but de vous permettre de pouvoir rencontrer et partager.</p>
+    <div href="#" class="col-span-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Une équipe active</h5>
+      <p class="font-normal text-gray-700">Notre équipe est active et agit dans le but de vous permettre de pouvoir rencontrer et partager.</p>
     </div>
-    <div href="#" class="col-span-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Un Monde de Restaurant</h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">Que voys soyez plus Italien, Asiatique ou Français, vous pourrez trouver des restaurants qui vous transporeront dans leur culture et leur histoire.</p>
+    <div href="#" class="col-span-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Un Monde de Restaurant</h5>
+      <p class="font-normal text-gray-700">Que voys soyez plus Italien, Asiatique ou Français, vous pourrez trouver des restaurants qui vous transporeront dans leur culture et leur histoire.</p>
     </div>
 </div>
 <section class="overflow-hidden text-gray-700 ">
