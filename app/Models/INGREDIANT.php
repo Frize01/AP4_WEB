@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $ID_INGREDANT
  * @property string $NOM_INGREDIANT
  * 
+ * @property Collection|CONSERNER[] $c_o_n_s_e_r_n_e_r_s
+ * @property Collection|CONTIENT[] $c_o_n_t_i_e_n_t_s
  * @property Collection|STOCK[] $s_t_o_c_k_s
  *
  * @package App\Models
@@ -28,6 +30,16 @@ class INGREDIANT extends Model
 	protected $fillable = [
 		'NOM_INGREDIANT'
 	];
+
+	public function c_o_n_s_e_r_n_e_r_s()
+	{
+		return $this->hasMany(CONSERNER::class, 'ID_INGREDIANT');
+	}
+
+	public function c_o_n_t_i_e_n_t_s()
+	{
+		return $this->hasMany(CONTIENT::class, 'ID_INGREDANT');
+	}
 
 	public function s_t_o_c_k_s()
 	{

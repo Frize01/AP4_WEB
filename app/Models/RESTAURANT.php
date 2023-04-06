@@ -43,37 +43,37 @@ class RESTAURANT extends Model
 		'COULEUR_SITE'
 	];
 
-	public function favoris()
+	public function f_a_v_o_r_i_s()
 	{
 		return $this->hasMany(FAVORI::class, 'ID_RESTAURANT');
 	}
 
-	public function photos()
+	public function p_h_o_t_o_s()
 	{
 		return $this->hasMany(PHOTO::class, 'ID_RESTAURANT');
 	}
 
-	public function recettes()
+	public function r_e_c_e_t_t_e_s()
 	{
 		return $this->hasMany(RECETTE::class, 'ID_RESTAURANT');
 	}
 
-	public function serveurs()
+	public function s_e_r_v_e_u_r_s()
 	{
 		return $this->hasMany(SERVEUR::class, 'ID_RESTAURANT');
 	}
 
-	public function staff()
+	public function s_t_a_f_f()
 	{
 		return $this->hasMany(STAFF::class, 'ID_RESTAURANT');
 	}
 
-	public function stocks()
+	public function s_t_o_c_k_s()
 	{
 		return $this->hasMany(STOCK::class, 'ID_RESTAURANT');
 	}
 
-	public function tableclients()
+	public function t_a_b_l_e_c_l_i_e_n_t_s()
 	{
 		return $this->hasMany(TABLECLIENT::class, 'ID_RESTAURANT');
 	}
