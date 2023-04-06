@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\FAVORI;
+use App\Models\COMMANDE;
+use App\Models\RESTAURANT;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\COMMANDE;
-use App\Models\FAVORI;
 
 class UserController extends Controller
 {
@@ -20,7 +21,20 @@ class UserController extends Controller
     }
     function listeFavori($idClient)
     {
-        return response()->json(FAVORI::where('id', $idClient)->get('id_restaurant'));
+        $listRest = response()->json(FAVORI::where('id', $idClient)->get('id_restaurant'));
+        $resp = [];
+        //$listRest2 = json_decode($listRest);
+        
+        error_log($listRest);
+
+        foreach($listRest as $key => $id)
+        {   
+            error_log($key);
+
+            $resto = response()->list(RESTAURANT::where("RESTAURANT.ID_RESTAURANT", $id["id_restaurant"])->get());
+            //array_push($resp,response()->list($resto[0]));
+        }
+        return $resp;
     }
     function listeCommande($idClient)
     {
