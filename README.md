@@ -63,3 +63,25 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |||Creation commande a emporter||
 |||Creation commande sur place||
 |||||
+
+# Test Unitaire
+
+## Lancée les test
+```bash
+.\vendor\bin\phpunit
+```
+
+## Crée une nouvelle classe de test
+
+```bash
+php artisan make:test NomTest
+```
+
+Dans la classe de test, bien faire attention à renommer les fonction avec test en debut
+
+```php
+public function test_liste_client()
+{
+    
+}
+```
