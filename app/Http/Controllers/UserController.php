@@ -20,7 +20,6 @@ class UserController extends Controller
         );
     }
 
-
     function listeFavori($idClient)
     {
         $listRest = FAVORI::where('id', $idClient)->get('id_restaurant');
@@ -31,9 +30,16 @@ class UserController extends Controller
             $resto = RESTAURANT::where("RESTAURANT.ID_RESTAURANT", $id["id_restaurant"])->get();
             array_push($resp,$resto[0]);
         }
-        return ($resp);
+        if($resp == null)
+        {
+            
+            return response()->json(['message' => 'Les favoris sont vide'],204);
+        }
+        else
+        {
+            return ($resp);
+        }
     }
-
 
     function listeCommande($idClient)
     {
@@ -45,10 +51,6 @@ class UserController extends Controller
     }
     function listeNonPayerCommande($idClient)
     {
-        error_log(COMMANDE::where('ID',"=", $idClient)
-        ->where('DATE_REGLEMENT_COMMANDE',"!=",null)
-        ->toSql());
-
         return response()->json(COMMANDE::where('ID',"=", $idClient)
         ->where('DATE_REGLEMENT_COMMANDE',"=",null)
         ->get());
