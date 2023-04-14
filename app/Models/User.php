@@ -70,7 +70,7 @@ class USER extends Authenticatable
 		return $this->hasOne(ADMINISTRATEUR::class, 'ID');
 	}
 
-	public function c_l_i_e_n_t()
+	public function client()
 	{
 		return $this->hasOne(CLIENT::class, 'ID');
 	}
@@ -80,7 +80,7 @@ class USER extends Authenticatable
 		return $this->hasMany(COMMANDE::class, 'ID');
 	}
 
-	public function s_e_r_v_e_u_r()
+	public function serveur()
 	{
 		return $this->hasOne(SERVEUR::class, 'ID');
 	}

@@ -42,7 +42,7 @@ class SERVEUR extends Model
 		return $this->belongsTo(RESTAURANT::class, 'ID_RESTAURANT');
 	}
 
-	public function u_s_e_r()
+	public function user()
 	{
 		return $this->belongsTo(USER::class, 'ID');
 	}

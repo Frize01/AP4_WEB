@@ -30,7 +30,7 @@ class CLIENT extends Model
 		'ID' => 'int'
 	];
 
-	public function u_s_e_r()
+	public function user()
 	{
 		return $this->belongsTo(USER::class, 'ID');
 	}
