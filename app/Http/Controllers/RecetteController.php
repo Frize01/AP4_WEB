@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\RECETTE;
 
 use App\Http\Controllers\Controller;
+use App\Models\ALLERGENE;
 use App\Models\CATEGORIE;
+use App\Models\CONSERNER;
 
 class RecetteController extends Controller
 {
@@ -28,8 +30,32 @@ class RecetteController extends Controller
     }
 
     function listeAllergene($id){
-        return response()->json(RECETTE::all());
+        
+        $listIng = RECETTE::join('CONTIENT','CONTIENT.id_recette','=','RECETTE.id_recette')
+        ->join('INGREDIANT','INGREDIANT.id_ingredant','=','CONTIENT.id_ingredant')
+        ->where('RECETTE.id_recette',$id)
+        ->get("INGREDIANT.id_ingredant");
+
+        $resp = [];
+
+        foreach( $listIng as $id)
+        {   
+            $tmp = CONSERNER::where('CONSERNER.ID_INGREDIANT','=',$id["id_ingredant"])
+                ->join('ALLERGENE','ALLERGENE.ID_ALLERGENE','=','CONSERNER.ID_ALLERGENE')
+                ->get("ALLERGENE.LIBELLE_ALLERGENE");
+            
+            if($tmp != "[]")
+            {
+                array_push($resp,$tmp);
+            }
+        }
+        
+        return ($resp);
     }
+    
+            // ALLERGENE::join('CONSERNER','CONSERNER.id_ingrediant','=','RECETTE.id_recette')
+            // ->join('ALLERGENE','ALLERGENE.id_ingredant','=','INGREDIANT.id_ingredant')
+            // ->where('ALLERGENE.ID_INGREDIANT',$id)
 
     function listeCategorieRecette($id){
         return response()->json(
