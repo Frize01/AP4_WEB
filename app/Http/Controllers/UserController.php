@@ -14,9 +14,9 @@ class UserController extends Controller
     function listeUsers()
     {
         return response()->json(
-            User::join('CLIENT','CLIENT.id','=','USERS.id')
-            ->whereRaw('CLIENT.id = USERS.id')
-            ->get()
+            User::join('CLIENT', 'CLIENT.id', '=', 'USERS.id')
+                ->whereRaw('CLIENT.id = USERS.id')
+                ->get()
         );
     }
 
@@ -25,18 +25,14 @@ class UserController extends Controller
         $listRest = FAVORI::where('id', $idClient)->get('id_restaurant');
         $resp = [];
 
-        foreach( $listRest as $id)
-        {   
+        foreach ($listRest as $id) {
             $resto = RESTAURANT::where("RESTAURANT.ID_RESTAURANT", $id["id_restaurant"])->get();
-            array_push($resp,$resto[0]);
+            array_push($resp, $resto[0]);
         }
-        if($resp == null)
-        {
-            
-            return response()->json(['message' => 'Les favoris sont vide'],204);
-        }
-        else
-        {
+        if ($resp == null) {
+
+            return response()->json(['message' => 'Les favoris sont vide'], 204);
+        } else {
             return ($resp);
         }
     }
@@ -47,12 +43,24 @@ class UserController extends Controller
     }
     function UsersInfo($idClient)
     {
-        return response()->json(User::where("id",$idClient)->get());
+        return response()->json(User::where("id", $idClient)->get());
     }
     function listeNonPayerCommande($idClient)
     {
-        return response()->json(COMMANDE::where('ID',"=", $idClient)
-        ->where('DATE_REGLEMENT_COMMANDE',"=",null)
-        ->get());
+        return response()->json(COMMANDE::where('ID', "=", $idClient)
+            ->where('DATE_REGLEMENT_COMMANDE', "=", null)
+            ->get());
+    }
+    //Write data on database
+
+    function newFavori(Request $request)
+    {
+        $tmpFav = new FAVORI();
+
+        $tmpFav->ID = $request->ID;
+        $tmpFav->ID_RESTAURANT = $request->ID_RESTAURANT;
+
+        //$tmpFav->save();
+        $tmpFav->save();
     }
 }

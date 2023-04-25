@@ -54,3 +54,6 @@ Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "list
 //Commande
 
 Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
+
+//Client
+Route::post('/client/newFav/', [UserController::class, "newFavori"]);
