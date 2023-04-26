@@ -26,7 +26,13 @@ class ServeurController extends Controller
         $commande = COMMANDE::find($idcommande);
         $commande->DATE_REGLEMENT_COMMANDE = date("Y-m-d H:i:s");
         return view("dashboard");
+    }
 
+    function deleteCommande($idcommande)
+    {
+        $commande = COMMANDE::find($idcommande);
+        $commande->destroy();
+        return view("dashboard");
     }
     
 }

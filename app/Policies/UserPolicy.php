@@ -20,7 +20,7 @@ class UserPolicy
     public function view(User $user)
     {
         // Vérifier si l'utilisateur est un client
-        $client = CLIENT::where('user_id', $user->id)->first();
+        $client = CLIENT::where('ID', '=', $user->id)->first();
 
         // Retourner vrai si l'utilisateur est soit un client, soit un serveur
         return $client;

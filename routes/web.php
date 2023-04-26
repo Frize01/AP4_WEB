@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\restaurantController;
 use App\Http\Controllers\payementController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +23,8 @@ Route::get('/', function () {
 
 Route::get('/restaurant', [restaurantController::class, 'RestaurantList']);
 Route::get('/restaurant/{id}', [restaurantController::class, 'RestaurantTemplate']);
-Route::get('/payement', [payementController::class, 'payement']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
