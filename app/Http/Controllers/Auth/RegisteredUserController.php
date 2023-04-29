@@ -45,6 +45,8 @@ class RegisteredUserController extends Controller
             'updated_at' => $request->updated_at,
         ]);
 
+        $user->sendEmailVerificationNotification();
+
         event(new Registered($user));
 
         $client = new CLIENT();

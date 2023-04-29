@@ -14,6 +14,7 @@ use App\Models\SERVEUR;
 use App\Models\COMMANDE;
 use App\Models\ADMINISTRATEUR;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Collection;
@@ -41,7 +42,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package App\Models
  */
-class USER extends Authenticatable
+class USER extends Authenticatable implements MustVerifyEmail
 {
 	use HasApiTokens, HasFactory, Notifiable;
 
@@ -59,11 +60,14 @@ class USER extends Authenticatable
 	protected $fillable = [
 		'name',
 		'email',
-		'email_verified_at',
 		'password',
 		'remember_token',
 		'password_resets'
 	];
+
+	protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
 	public function a_d_m_i_n_i_s_t_r_a_t_e_u_r()
 	{
