@@ -19,15 +19,35 @@
         </div>
     </div>
 
-    @if(isset($commandesServeur))
+    @if(isset($commandesSurPlaceServeur))
     <div class="bg-frostblue p-4">
         <h2 class="text-lg font-medium mb-4">Liste de commandes</h2>
 
         <ul class="divide-y divide-gray-200">
-        @foreach ($commandesServeur as $commande)
+        @foreach ($commandesSurPlaceServeur as $commande)
             <li class="py-2 flex items-center justify-between">
             <div class="flex items-center">
-                <span class="font-medium">{{ $commande }}</span>
+                <span class="font-medium">Numéro commande : C{{$commande->ID_COMMANDE}} - Client {{ $commande->ID }} - {{$commande->PRIX_COMMANDE}}€</span>
+            </div>
+            <div class="flex items-center">
+                <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
+                <button class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Supprimer</button>
+            </div>
+            </li>
+        @endforeach
+        </ul>
+    </div>
+    @endif
+    <br></br>
+    @if(isset($commandesEmporterServeur))
+    <div class="bg-frostblue p-4">
+        <h2 class="text-lg font-medium mb-4">Liste de commandes</h2>
+
+        <ul class="divide-y divide-gray-200">
+        @foreach ($commandesEmporterServeur as $commande)
+            <li class="py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                <span class="font-medium">Client {{ $commande->ID }}</span>
             </div>
             <div class="flex items-center">
                 <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
@@ -44,7 +64,7 @@
             <ul class="list-disc ml-4">
                 @foreach ($commandesSurplace as $commande)
                     <li class="mb-2">
-                        <p>{{ $commande->NOM_RESTAURANT }} - Serveur {{$commande->ID}} - {{$commande->PRIX_COMMANDE }}</p>
+                        <p>{{ $commande->NOM_RESTAURANT }} - Serveur {{$commande->ID}} - {{$commande->PRIX_COMMANDE }}€</p>
                     </li>
                 @endforeach
             </ul>
@@ -56,7 +76,7 @@
             <ul class="list-disc ml-4">
                 @foreach ($commandesEmporter as $commande)
                     <li class="mb-2">
-                        <p>{{ $commande->DESCRIPTION_COMMANDE }} - {{$commande->NOM_RESTAURANT}} - {{ $commande->PRIX_COMMANDE }} </p>
+                        <p>{{$commande->NOM_RESTAURANT}} - {{ $commande->DESCRIPTION_COMMANDE }} - {{ $commande->PRIX_COMMANDE }}€</p>
                     </li>
                 @endforeach
             </ul>

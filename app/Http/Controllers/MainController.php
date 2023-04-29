@@ -20,13 +20,17 @@ class MainController extends Controller
             $commandes = $classe->commandesGet(auth()->id());
             $commandesSurPlace = $commandes["sur_place"];
             $commandesEmporter = $commandes["a_emporter"];
-            return view('dashboard',['commandesSurplace' => $commandesSurPlace, 'commandesEmporter' => $commandesEmporter]);
+            return view('dashboard',['commandesSurplace' => $commandesSurPlace, 
+                                    'commandesEmporter' => $commandesEmporter]);
         } 
         else {
             $classe = new ServeurController;
             $serveur = SERVEUR::find(auth()->id());
-            $commandes = $classe->commandesGet($serveur->ID_RESTAURANT);
-            return view('dashboard',['commandesServeur' => $commandes]);
+            $commandes = $classe->commandesGet($serveur->ID_RESTAURANT, auth()->id());
+            $commandesSurPlaceServeur = $commandes["sur_place"];
+            $commandesEmporterServeur = $commandes["a_emporter"];
+            return view('dashboard',['commandesSurPlaceServeur' => $commandesSurPlaceServeur, 
+                        'commandesEmporterServeur' => $commandesEmporterServeur]);
         }
     }
 }
