@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\restaurantController;
 use App\Http\Controllers\payementController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ServeurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,9 @@ Route::get('/restaurant', [restaurantController::class, 'RestaurantList']);
 Route::get('/restaurant/{id}', [restaurantController::class, 'RestaurantTemplate']);
 
 Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/commande_sur_place', [ServeurController::class, 'commandeDashboard'])->middleware(['auth', 'verified']);
+Route::post('/ajout_produit', [ServeurController::class, 'ajouterProduit'])->middleware(['auth', 'verified']);
+Route::post('/supprimer_produit', [ServeurController::class, 'supprimerProduit'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

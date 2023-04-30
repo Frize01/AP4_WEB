@@ -26,10 +26,10 @@
                 <h3 class="text-lg font-semibold text-gray-800">{{ $recette->NOM_RECETTE }}</h3>
                 <p class="text-gray-600 font-semibold">{{ $recette->DESCRIPTION_RECETTE }}</p>
                 <div class="mt-2 flex items-center text-sm text-gray-500">
-                    <span class="mr-1 font-semibold">Ingrédients :</span>
+                    <span class="mr-1 font-semibold">Ingrédients (ou contient) :</span>
                     <span>
                     @foreach ($recettes as $ingredient)
-                        @if ($ingredient->NOM_RECETTE == $recette->NOM_RECETTE)
+                        @if ($ingredient->NOM_RECETTE == $recette->NOM_RECETTE && !empty($ingredient->NOM_INGREDIANT))
                         {{ $ingredient->NOM_INGREDIANT }}@if (!$loop->last), @endif
                         @endif
                     @endforeach
@@ -39,7 +39,7 @@
                     <p class="mr-1 font-semibold">Allergènes:</p>
                     <span>
                     @foreach ($recettes as $allergene)
-                        @if ($allergene->NOM_RECETTE == $recette->NOM_RECETTE)
+                        @if ($allergene->NOM_RECETTE == $recette->NOM_RECETTE && !empty($allergene->LIBELLE_ALLERGENE))
                         {{ $allergene->LIBELLE_ALLERGENE }}@if (!$loop->last), @endif
                         @endif
                     @endforeach
