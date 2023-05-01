@@ -63,4 +63,10 @@ class UserController extends Controller
         //$tmpFav->save();
         $tmpFav->save();
     }
+    function login(Request $request)
+    {
+        $login_exist = User::where('email', "=",$request->email);
+        
+        return response()->json($login_exist);
+    }
 }
