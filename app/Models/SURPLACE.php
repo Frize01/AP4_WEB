@@ -49,6 +49,7 @@ class SURPLACE extends Model
 		'ID_TABLE',
 		'ID_RESTAURANT',
 		'ID',
+		'ID_COMMANDE',
 		'DATE_FIN_COMMANDE',
 		'DATE_DEBUT_COMMANDE'
 	];

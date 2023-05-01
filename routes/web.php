@@ -29,6 +29,7 @@ Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware(['aut
 Route::get('/dashboard/commande_sur_place', [ServeurController::class, 'commandeDashboard'])->middleware(['auth', 'verified']);
 Route::post('/ajout_produit', [ServeurController::class, 'ajouterProduit'])->middleware(['auth', 'verified']);
 Route::post('/supprimer_produit', [ServeurController::class, 'supprimerProduit'])->middleware(['auth', 'verified']);
+Route::post('/validationCommande', [ServeurController::class, 'validationCommande'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

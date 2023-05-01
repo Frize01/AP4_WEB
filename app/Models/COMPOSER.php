@@ -34,6 +34,13 @@ class COMPOSER extends Model
 		'ID_COMMANDE' => 'int'
 	];
 
+	protected $fillable = [
+		'ID_RESTAURANT',
+		'ID_RECETTE',
+		'ID',
+		'ID_COMMANDE'
+	];
+
 	public function c_o_m_m_a_n_d_e()
 	{
 		return $this->belongsTo(COMMANDE::class, 'ID')

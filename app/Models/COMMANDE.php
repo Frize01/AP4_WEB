@@ -51,6 +51,7 @@ class COMMANDE extends Model
 
 	protected $fillable = [
 		'ID_TYPE_TVA',
+		'ID_COMMANDE',
 		'ID_TVA',
 		'DATE_COMMANDE',
 		'PRIX_COMMANDE',

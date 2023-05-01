@@ -57,6 +57,10 @@
         @endforeach
         </ul>
     </div>
+    <br></br>
+    <div class="flex items-center">
+        <a href="/dashboard/commande_sur_place"><button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded mr-2">Prise de commande</button></a>
+    </div>
     @endif
     @if(isset($commandesSurplace))
         <div class="bg-frostblue shadow-md rounded px-8 pt-6 pb-8 mb-4">
