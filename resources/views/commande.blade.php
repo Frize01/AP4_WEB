@@ -12,7 +12,7 @@
     <br></br>
         <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">______________________________________________</h2>
             <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">{{ $categorie }}</h2>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center items-center space-x-5">
             @foreach ($recettesParCategorie as $key => $recette)
                 @if ($key == 0 || $recette->NOM_RECETTE != $recettesParCategorie[$key-1]->NOM_RECETTE)
                 <form method="POST" action="/ajout_produit">
@@ -105,10 +105,19 @@
             @endfor
         </tbody>
     </table>
+    <br></br>
+    <br></br>
+    <div class="flex justify-center">
     <form method="POST" action="/validationCommande">
         @csrf
+        <select name="table">
+            @foreach ($table as $item)
+                <option value="{{ $item->ID_TABLE }}">{{ $item->LIBELLE_TABLE }}</option>
+            @endforeach
+        </select>
         <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2"  type="submit">Valider Commande</button>
     </form>
+    </div>
     @endif
 </div>
 

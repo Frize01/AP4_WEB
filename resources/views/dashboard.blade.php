@@ -30,8 +30,18 @@
                 <span class="font-medium">Numéro commande : C{{$commande->ID_COMMANDE}} - Client {{ $commande->ID }} - {{$commande->PRIX_COMMANDE}}€</span>
             </div>
             <div class="flex items-center">
-                <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
-                <button class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Supprimer</button>
+                <form method="POST" action="/confirmation_commande">
+                    @csrf
+                    <input type="hidden" name="id_commande" value="{{$commande->ID_COMMANDE}}">
+                    <input type="hidden" name="type" value="sur_place">
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
+                </form>
+                <form method="POST" action="/suppression_commande">
+                    @csrf
+                    <input type="hidden" name="type" value="sur_place">
+                    <input type="hidden" name="id_commande" value="{{$commande->ID_COMMANDE}}">
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Supprimer</button>
+                </form>
             </div>
             </li>
         @endforeach
@@ -50,8 +60,18 @@
                 <span class="font-medium">Client {{ $commande->ID }}</span>
             </div>
             <div class="flex items-center">
-                <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
-                <button class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Supprimer</button>
+                <form method="POST" action="/validation_commande">
+                    @csrf
+                    <input type="hidden" name="id_commande" value="{{$commande->ID_COMMANDE}}">
+                    <input type="hidden" name="type" value="a_emporter">
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Valider</button>
+                </form>
+                <form method="POST" action="/suppression_commande">
+                    @csrf
+                    <input type="hidden" name="type" value="a_emporter">
+                    <input type="hidden" name="id_commande" value="{{$commande->ID_COMMANDE}}">
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Supprimer</button>
+                </form>
             </div>
             </li>
         @endforeach

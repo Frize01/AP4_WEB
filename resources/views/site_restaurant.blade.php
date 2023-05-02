@@ -13,7 +13,7 @@
     <br></br>
     <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">______________________________________________</h2>
         <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">{{ $categorie }}</h2>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center items-center space-x-5">
         @foreach ($recettesParCategorie as $key => $recette)
             @if ($key == 0 || $recette->NOM_RECETTE != $recettesParCategorie[$key-1]->NOM_RECETTE)
             @php
