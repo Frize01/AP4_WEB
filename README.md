@@ -7,12 +7,14 @@
 ## Sommaire
 1. [Information](#information)
 2. [Recevoir des données avec les api](#explication-des-api)
-    - [Api Clients](#client)
+    - [Api Clients](#clients)
     - [Api Recettes](#recette)
     - [Api Restaurant](#restaurant)
     - [Api Global](#global)
 3. [Envoyer des données avec les api](#Envoie-de-données)
 4. [Login](#login)
+    - [CLIENT](#client)
+    - [STAFF](#staff)
 
 ---
 # Information
@@ -21,7 +23,7 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 
 ---
 # Explication des api
-## Client
+## Clients
 |Api | Réponse| Disponibilité |
 |---|---|---|
 | api/clients | liste des clients |✅|
@@ -83,11 +85,46 @@ Dans la classe de test, bien faire attention à renommer les fonction avec test 
 ```php
 public function test_liste_client()
 {
-    
+    //test
 }
 ```
 ---
 # Login
+
+## CLIENT
+
+### Reponse
+
+### success
+Si le mot de passe est bon et l'utilisateur fait partie du staff d'un restaurant, on reçoit:
+```json
+[
+    {
+        "id": 65,
+        "name": "Bob",
+        "email": "tomy49@laposte.net"
+    }
+]
+```
+> Un code 200 est aussi retourner
+
+### fail
+
+Si le mot de passe n'est pas bon :
+```json
+{
+    "message": "Mauvais mdp"
+}
+```
+> Un code 400 est aussi retourner
+
+Si l'utilisateur ne fait pas partie du staff d'un restaurant:
+
+```json
+{
+    "message": "PAS UN CLIENT"
+}
+```
 
 ## STAFF
 
