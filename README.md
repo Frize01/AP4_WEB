@@ -93,6 +93,8 @@ public function test_liste_client()
 
 ## CLIENT
 
+`/api/login/CLIENT`
+
 ### Reponse
 
 ### success
@@ -110,21 +112,7 @@ Si le mot de passe est bon et l'utilisateur fait partie du staff d'un restaurant
 
 ### fail
 
-Si le mot de passe n'est pas bon :
-```json
-{
-    "message": "Mauvais mdp"
-}
-```
-> Un code 400 est aussi retourner
-
-Si l'utilisateur ne fait pas partie du staff d'un restaurant:
-
-```json
-{
-    "message": "PAS UN CLIENT"
-}
-```
+Un code 400 est renvoyer
 
 ## STAFF
 
@@ -152,18 +140,4 @@ Si le mot de passe est bon et l'utilisateur fait partie du staff d'un restaurant
 
 ### fail
 
-Si le mot de passe n'est pas bon :
-```json
-{
-    "message": "Mauvais mdp"
-}
-```
-> Un code 400 est aussi retourner
-
-Si l'utilisateur ne fait pas partie du staff d'un restaurant:
-
-```json
-{
-    "message": "PAS UN PATRON"
-}
-```
+Un code 400 est renvoyer
