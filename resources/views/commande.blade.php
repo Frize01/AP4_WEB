@@ -17,6 +17,9 @@
                 @if ($key == 0 || $recette->NOM_RECETTE != $recettesParCategorie[$key-1]->NOM_RECETTE)
                 <form method="POST" action="/ajout_produit">
                 @csrf
+                @php
+                    $zeroStock = false;
+                @endphp
                 <div class="bg-[{{$restaurant->BG_RESTAURANT}}] shadow rounded-lg overflow-hidden">
                     <div class="relative pb-48 overflow-hidden">
                     <img class="absolute inset-0 h-full w-full object-cover"
@@ -51,7 +54,20 @@
                         <input type="hidden" name="produit" value="{{$recette->ID_RECETTE}}">
                     </div>
                     </div>
-                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Rajouter</button>
+                    @foreach ($recettes as $stock)
+                            @if ($stock->NOM_RECETTE == $recette->NOM_RECETTE)
+                                @if (empty($stock->STOCK_ING))
+                                    @php
+                                        $zeroStock = true;
+                                    @endphp
+                                @endif
+                            @endif
+                    @endforeach
+                    @if ($zeroStock == false)
+                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded mr-2">Rajouter</button>
+                    @else
+                    <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">HORS STOCK</h2>
+                    @endif
                 </div>
                 </form>
                 @endif

@@ -84,9 +84,21 @@
                         <li>
                             <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2 md:dark:hover:text-white md:dark:hover:bg-transparent hover:bg-{{$bg}}">Contact</a>
                         </li>
+                        @if (auth()->id())
                         <li>
-                            <a href="dashboard" :active="request()->routeIs('dashboard')">{{ __('Dashboard') }}</a>
+                            <a href="dashboard" :active="request()->routeIs('dashboard')">Profile</a>
                         </li>
+                        <li>
+                            <a href="logout" :active="request()->routeIs('logout')">Déconnexion</a>
+                        </li>
+                        @else
+                        <li>
+                            <a href="login" :active="request()->routeIs('login')">Login</a>
+                        </li>
+                        <li>
+                            <a href="register" :active="request()->routeIs('register')">Register</a>
+                        </li> 
+                        @endif   
                     </ul>
                 </div>
             </div>

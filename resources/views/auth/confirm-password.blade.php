@@ -1,4 +1,7 @@
-<x-guest-layout>
+<x-template>
+    <br></br>
+    <br></br>
+    <br></br>
     <div class="mb-4 text-sm text-gray-600">
         {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
     </div>
@@ -8,7 +11,7 @@
 
         <!-- Password -->
         <div>
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="Mot de passe" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -24,4 +27,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-template>

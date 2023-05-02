@@ -53,8 +53,6 @@ class RegisteredUserController extends Controller
         $client->ID = $user->id;
         $client->save();
 
-        Auth::login($user);
-
-        return redirect('/');
+        return redirect('/verify-email');
     }
 }
