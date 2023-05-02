@@ -27,7 +27,7 @@
         @foreach ($commandesSurPlaceServeur as $commande)
             <li class="py-2 flex items-center justify-between">
             <div class="flex items-center">
-                <span class="font-medium">Numéro commande : C{{$commande->ID_COMMANDE}} - Client {{ $commande->ID }} - {{$commande->PRIX_COMMANDE}}€</span>
+                <span class="font-medium">Numéro commande : C{{$commande->ID_COMMANDE}} - {{$commande->PRIX_COMMANDE}}€</span>
             </div>
             <div class="flex items-center">
                 <form method="POST" action="/confirmation_commande">
