@@ -86,13 +86,13 @@ class UserController extends Controller
             }
             else
             {
-                $retour = ['message' => 'PAS UN PATRON'];
+                $retour = [];
                 $code = 400;
             }
         }
         else
         {
-            $retour = ['message' => 'Mauvais mdp'];
+            $retour = [];
             $code = 400;
         }
         
@@ -117,13 +117,13 @@ class UserController extends Controller
             }
             else
             {
-                $retour = ['message' => 'PAS UN CLIENT'];
+                $retour = [];
                 $code = 400;
             }
         }
         else
         {
-            $retour = ['message' => 'Mauvais mdp'];
+            $retour = [];
             $code = 400;
         }
         
