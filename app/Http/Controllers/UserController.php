@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\STAFF;
+use App\Models\CLIENT;
 use App\Models\FAVORI;
 use App\Models\COMMANDE;
 use App\Models\RESTAURANT;
@@ -64,12 +65,10 @@ class UserController extends Controller
         //$tmpFav->save();
         $tmpFav->save();
     }
+
     function loginSTAFF(Request $request)
     {
         $login_exist = User::where('email', "=",$request->email)->limit(1)->get();
-
-    
-        // return response()->json($login_exist[0]->name);
 
         if(password_verify($request->password,$login_exist[0]->password))
         {
@@ -88,6 +87,37 @@ class UserController extends Controller
             else
             {
                 $retour = ['message' => 'PAS UN PATRON'];
+                $code = 400;
+            }
+        }
+        else
+        {
+            $retour = ['message' => 'Mauvais mdp'];
+            $code = 400;
+        }
+        
+        return response()->json($retour,$code);
+    }
+
+    function loginCLIENT(Request $request)
+    {
+        $login_exist = User::where('email', "=",$request->email)->limit(1)->get();
+
+        if(password_verify($request->password,$login_exist[0]->password))
+        {
+            if(CLIENT::where('ID',"=",$login_exist[0]->id)->exists())
+            {
+                $data = [];
+                array_push($data,['id' => $login_exist[0]->id,
+                                'name' => $login_exist[0]->name,
+                                'email' => $login_exist[0]->email
+            ]);
+                $retour = $data;
+                $code = 200;
+            }
+            else
+            {
+                $retour = ['message' => 'PAS UN CLIENT'];
                 $code = 400;
             }
         }

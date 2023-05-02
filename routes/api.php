@@ -59,4 +59,5 @@ Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
 Route::post('/client/newFav/', [UserController::class, "newFavori"]);
 
 //login
+Route::post('/login/CLIENT/', [UserController::class, "loginCLIENT"]);
 Route::post('/login/STAFF/', [UserController::class, "loginSTAFF"]);
