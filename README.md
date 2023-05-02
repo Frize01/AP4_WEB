@@ -12,6 +12,7 @@
     - [Api Restaurant](#restaurant)
     - [Api Global](#global)
 3. [Envoyer des données avec les api](#Envoie-de-données)
+4. [Login](#login)
 
 ---
 # Information
@@ -83,5 +84,49 @@ Dans la classe de test, bien faire attention à renommer les fonction avec test 
 public function test_liste_client()
 {
     
+}
+```
+---
+# Login
+
+## STAFF
+
+`/api/login/STAFF`
+
+les paramètres sont :
+- email
+- password
+
+### Reponse
+
+### success
+Si le mot de passe est bon et l'utilisateur fait partie du staff d'un restaurant, on reçoit:
+```json
+[
+    {
+        "id": 65,
+        "name": "Bob",
+        "email": "tomy49@laposte.net",
+        "Id_Restorant": 2
+    }
+]
+```
+> Un code 200 est aussi retourner
+
+### fail
+
+Si le mot de passe n'est pas bon :
+```json
+{
+    "message": "Mauvais mdp"
+}
+```
+> Un code 400 est aussi retourner
+
+Si l'utilisateur ne fait pas partie du staff d'un restaurant:
+
+```json
+{
+    "message": "PAS UN PATRON"
 }
 ```
