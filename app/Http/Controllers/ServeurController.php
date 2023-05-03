@@ -11,7 +11,20 @@ class ServeurController extends Controller
 {
     function listeServeur($idRestaurant)
     {
-        return response()->json(SERVEUR::where("ID_RESTAURANT","=",$idRestaurant)->get());
+        $Serveurs = SERVEUR::where("ID_RESTAURANT","=",$idRestaurant)->get();
+
+        $data = [];
+        foreach($Serveurs as $serv)
+        {
+            $tmpUser = USER::find($serv->ID);
+            $tmpReturn = [
+                'id' => $tmpUser->id,
+                'name' => $tmpUser->name
+            ];
+
+            array_push($data, $tmpReturn);
+        }
+        return response()->json($data,200);
 
     }
 
