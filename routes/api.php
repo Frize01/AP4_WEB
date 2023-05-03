@@ -44,6 +44,13 @@ Route::get('/recette/{id}/ingrediants', [RecetteController::class, "listeIngredi
 Route::get('/recette/{id}/allergenes', [RecetteController::class, "listeAllergene"]);
 Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategorieRecette"]);
 Route::get('/recette/restaurant/{id}', [RecetteController::class, "listeRecetteRestaurant"]);
+//POST
+Route::post('/recette/New/', [RecetteController::class, "ajoutRecette"]);
+//PUT
+Route::put('/recette/Change/', [RecetteController::class, "MajRecette"]);
+//DELETE
+Route::delete('/recette/Delete/', [RecetteController::class, "delRecette"]);
+
 
 //Client
 //GET
@@ -85,3 +92,13 @@ Route::post('/Table/New/', [TableController::class, "ajoutTable"]);
 Route::put('/Table/Change/', [TableController::class, "MajTable"]);
 //DELETE
 Route::delete('/Table/Delete/', [TableController::class, "delTable"]);
+
+//Allergenes
+//GET
+Route::get('/Allergene/{idRestaurant}', [AllergeneController::class, "listeAllergene"]);
+//POST
+Route::post('/Allergene/New/', [AllergeneController::class, "ajoutAllergene"]);
+//PUT
+Route::put('/Allergene/Change/', [AllergeneController::class, "MajAllergene"]);
+//DELETE
+Route::delete('/Allergene/Delete/', [AllergeneController::class, "delAllergene"]);

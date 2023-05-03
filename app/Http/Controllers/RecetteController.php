@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\RECETTE;
 
-use App\Http\Controllers\Controller;
 use App\Models\ALLERGENE;
 use App\Models\CATEGORIE;
 use App\Models\CONSERNER;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RecetteController extends Controller
 {
@@ -76,5 +77,41 @@ class RecetteController extends Controller
     function listeRecette()
     {
         return response()->json(RECETTE::all());
+    }
+
+    //POST
+    function ajoutRecette(Request $request)
+    {
+        //variable for json return
+        $code = 0;
+        $message = "erreur";
+
+        if($request->ID_RESTAURANT != null)
+        {
+            //Création new table
+            $NewRecette = new RECETTE;
+
+            //remplir avec donnée envoyer
+            $NewRecette->ID_RESTAURANT = $request->ID_RESTAURANT;
+            $NewRecette->ID_RECETTE = RECETTE::max("ID_RECETTE")+1;//prend le max de la valeur ID_RECETTE et rajoute 1
+            $NewRecette->ID_CATEGORIE = $request->ID_CATEGORIE;
+            $NewRecette->NOM_RECETTE = $request->NOM_RECETTE;
+            $NewRecette->DESCRIPTION_RECETTE = $request->DESCRIPTION_RECETTE;
+            $NewRecette->PHOTO_RECETTE = $request->PHOTO_RECETTE;
+            $NewRecette->PRIXHT = $request->PRIXHT;
+            
+            //sauvegarde dans la bdd
+            $NewRecette->save();
+
+            $code=200;
+            $message = $NewRecette;
+
+        }
+        else// La table n'est pas specifier
+        {
+            $code = 400;//changement du code 
+        }
+        //retour json
+        return response()->json($message,$code);
     }
 }
