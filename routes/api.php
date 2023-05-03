@@ -24,15 +24,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Recuperer les données
 
 //restaurants 
+//GET
 Route::get('/restaurants', [RestaurantController::class, "listeRestaurant"]);
 Route::get('/restaurant/{id}', [RestaurantController::class, "RestaurantInfo"]);
 Route::get('/restaurant/{id}/recettes/', [RestaurantController::class, "RecetteDansRestaurant"]);
 Route::get('/restaurant/staff/{id}', [RestaurantController::class, "StaffRestaurant"]);
+//POST
+Route::post('/restaurant/Change/', [RestaurantController::class, "ChangeRestaurant"]);
 
 //Recette
+//GET
 Route::get('/recette/categories', [RecetteController::class, "listeCategorie"]);
 Route::get('/recettes', [RecetteController::class, "listeRecette"]);
 Route::get('/recette/{id}', [RecetteController::class, "infoRecette"]);
@@ -42,32 +45,32 @@ Route::get('/recette/{id}/categories', [RecetteController::class, "listeCategori
 Route::get('/recette/restaurant/{id}', [RecetteController::class, "listeRecetteRestaurant"]);
 
 //Client
+//GET
 Route::get('/clients/', [UserController::class, "listeUsers"]);
 Route::get('/client/{idClient}', [UserController::class, "UsersInfo"]);
 Route::get('/client/{idClient}/favori', [UserController::class, "listeFavori"]);
 Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommande"]);
 Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "listeNonPayerCommande"]);
 
-
-// ajout de données dans la bdd
-
-//Commande
-
 //Staff
+//POST
 Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
 
 //Client
+//POST
 Route::post('/client/newFav/', [UserController::class, "newFavori"]);
 
 //login
+//POST
 Route::post('/login/CLIENT/', [UserController::class, "loginCLIENT"]);
 Route::post('/login/STAFF/', [UserController::class, "loginSTAFF"]);
 
-//Restaurant
-Route::post('/restaurant/Change/', [RestaurantController::class, "ChangeRestaurant"]);
-
 //Serveur
+//GET
 Route::get('/serveurs/{idRestaurant}', [ServeurController::class, "listeServeur"]);
+//POST
 Route::post('/serveur/New/', [ServeurController::class, "ajoutServeur"]);
+//PUT
 Route::put('/serveur/Change/', [ServeurController::class, "MajServeur"]);
+//DELETE
 Route::delete('/serveur/Delete/', [ServeurController::class, "delServeur"]);
