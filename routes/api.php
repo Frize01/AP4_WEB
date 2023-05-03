@@ -48,11 +48,11 @@ Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommand
 Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "listeNonPayerCommande"]);
 
 
-//Staff
 // ajout de données dans la bdd
 
 //Commande
 
+//Staff
 Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
 
 //Client
@@ -61,3 +61,9 @@ Route::post('/client/newFav/', [UserController::class, "newFavori"]);
 //login
 Route::post('/login/CLIENT/', [UserController::class, "loginCLIENT"]);
 Route::post('/login/STAFF/', [UserController::class, "loginSTAFF"]);
+
+//Serveur
+Route::get('/serveurs/', [ServeurController::class, "listeServeur"]);
+Route::post('/serveur/New/', [ServeurController::class, "ajoutServeur"]);
+Route::patch('/serveur/Change/', [ServeurController::class, "MajServeur"]);
+Route::delete('/serveur/Change/', [ServeurController::class, "delServeur"]);
