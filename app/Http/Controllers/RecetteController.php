@@ -56,10 +56,6 @@ class RecetteController extends Controller
         return ($resp);
     }
 
-    // ALLERGENE::join('CONSERNER','CONSERNER.id_ingrediant','=','RECETTE.id_recette')
-    // ->join('ALLERGENE','ALLERGENE.id_ingredant','=','INGREDIANT.id_ingredant')
-    // ->where('ALLERGENE.ID_INGREDIANT',$id)
-
     function listeCategorieRecette($id)
     {
         return response()->json(
@@ -128,8 +124,6 @@ class RecetteController extends Controller
         foreach ($tmpRecettes as $recette) {
             $Recette = $recette;
         }
-
-        error_log($Recette);
 
         if ($request->ID_RESTAURANT != null and $Recette->exists()) {
             //remplir avec donnée envoyer
