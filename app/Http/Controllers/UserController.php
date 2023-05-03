@@ -68,65 +68,84 @@ class UserController extends Controller
 
     function loginSTAFF(Request $request)
     {
+        //Recuperation de l'utilisateur par son email
         $login_exist = User::where('email', "=",$request->email)->limit(1)->get();
 
+        //verification du mdp
         if(password_verify($request->password,$login_exist[0]->password))
         {
+            //verification si l'utilisateur est un staff
             if(STAFF::where('ID',"=",$login_exist[0]->id)->exists())
             {
+                //recuperation des donnée de staff
                 $staff = STAFF::where('ID',"=",$login_exist[0]->id)->get("ID_RESTAURANT");
-                $data = [];
+
+                $data = [];//ce qui sera envoyer
+                //ajout de toute les donnée dans data
                 array_push($data,['id' => $login_exist[0]->id,
                                 'name' => $login_exist[0]->name,
                                 'email' => $login_exist[0]->email,
                                 "Id_Restorant" => $staff[0]->ID_RESTAURANT
             ]);
+                //changement des variables pour le retour
                 $retour = $data;
                 $code = 200;
             }
-            else
+            else//si l'utilisateur n'est pas un staff
             {
+                //changement des variables pour le retour
                 $retour = [];
                 $code = 400;
             }
         }
-        else
+        else//si le mdp n'est  pas bon
         {
+            //changement des variables pour le retour
             $retour = [];
             $code = 400;
         }
         
+        //retour de l'api
         return response()->json($retour,$code);
     }
 
     function loginCLIENT(Request $request)
     {
+        //Recuperation de l'utilisateur par son email
         $login_exist = User::where('email', "=",$request->email)->limit(1)->get();
 
+        //verification du mdp
         if(password_verify($request->password,$login_exist[0]->password))
         {
+            //verification si l'utilisateur est un client
             if(CLIENT::where('ID',"=",$login_exist[0]->id)->exists())
             {
-                $data = [];
+                $data = [];//ce qui sera envoyer
+
+                //ajout de toute les donnée dans data
                 array_push($data,['id' => $login_exist[0]->id,
                                 'name' => $login_exist[0]->name,
                                 'email' => $login_exist[0]->email
             ]);
+                //changement des variables pour le retour
                 $retour = $data;
                 $code = 200;
             }
-            else
+            else//si l'utilisateur n'est pas un client
             {
+                //changement des variables pour le retour
                 $retour = [];
                 $code = 400;
             }
         }
-        else
+        else//si le mdp n'est  pas bon
         {
+            //changement des variables pour le retour
             $retour = [];
             $code = 400;
         }
         
+        //retour de l'api
         return response()->json($retour,$code);
     }
 }
