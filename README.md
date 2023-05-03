@@ -78,11 +78,11 @@ serveur:
 
 ## Serveur
 
-|Api |paramètre| Réponse | Disponibilité |
-|---|---|---|---|
-| api/serveur/New/ | id, name, email, password, id_restaurant |ajout d'un serveur||
-| api/serveur/Change/ | id, name, email, password, id_restaurant| modification d'un compte serveur||
-| api/serveur/Delete/ | id | Supprimer un compte serveur ||
+||Api |paramètre| Réponse | Disponibilité |
+|---|---|---|---|---|
+| POST | api/serveur/New/ | id, name, email, password, id_restaurant |ajout d'un serveur||
+| UPDATE | api/serveur/Change/ | id, name, email, password, id_restaurant| modification d'un compte serveur||
+| DELETE | api/serveur/Delete/ | id | Supprimer un compte serveur ||
 
 
 # Test Unitaire
@@ -111,7 +111,7 @@ public function test_liste_client()
 
 ## CLIENT
 
-`/api/login/CLIENT`
+POST `/api/login/CLIENT`
 
 ### Reponse
 
@@ -134,7 +134,7 @@ Un code 400 est renvoyer
 
 ## STAFF
 
-`/api/login/STAFF`
+POST `/api/login/STAFF`
 
 les paramètres sont :
 - email
