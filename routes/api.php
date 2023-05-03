@@ -66,4 +66,4 @@ Route::post('/login/STAFF/', [UserController::class, "loginSTAFF"]);
 Route::get('/serveurs/', [ServeurController::class, "listeServeur"]);
 Route::post('/serveur/New/', [ServeurController::class, "ajoutServeur"]);
 Route::patch('/serveur/Change/', [ServeurController::class, "MajServeur"]);
-Route::delete('/serveur/Change/', [ServeurController::class, "delServeur"]);
+Route::delete('/serveur/Delete/', [ServeurController::class, "delServeur"]);

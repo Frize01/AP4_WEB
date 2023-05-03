@@ -11,6 +11,7 @@
     - [Api Recettes](#recette)
     - [Api Restaurant](#restaurant)
     - [Api Global](#global)
+    - [Autre](#autre)
 3. [Envoyer des données avec les api](#Envoie-de-données)
 4. [Login](#login)
     - [CLIENT](#client)
@@ -56,6 +57,14 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 | api/restaurant/{id Restaurant} | Information d'un restaurant |✅|
 | api/restaurant/{id Restaurant}/recettes/ | liste des recette disponible par restaurant |✅|
 
+## Autre
+
+serveur:
+
+|Api | Réponse|Disponibilité |
+|---|---|---|
+| api/serveurs/| liste des serveur||
+
 ---
 # Envoie de données
 
@@ -66,6 +75,15 @@ Cette api a été developer avec php en utilisant le framework [laravel](https:/
 |||Creation commande a emporter||
 |||Creation commande sur place||
 |||||
+
+## Serveur
+
+|Api |paramètre| Réponse | Disponibilité |
+|---|---|---|---|
+| api/serveur/New/ | id, name, email, password, id_restaurant |ajout d'un serveur||
+| api/serveur/Change/ | id, name, email, password, id_restaurant| modification d'un compte serveur||
+| api/serveur/Delete/ | id | Supprimer un compte serveur ||
+
 
 # Test Unitaire
 
