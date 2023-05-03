@@ -5,17 +5,33 @@
 
 
 ## Sommaire
-1. [Information](#information)
-2. [Recevoir des données avec les api](#explication-des-api)
-    - [Api Clients](#clients)
-    - [Api Recettes](#recette)
-    - [Api Restaurant](#restaurant)
-    - [Api Global](#global)
-    - [Autre](#autre)
-3. [Envoyer des données avec les api](#Envoie-de-données)
-4. [Login](#login)
-    - [CLIENT](#client)
-    - [STAFF](#staff)
+- [Projet AP4](#projet-ap4)
+  - [Developement API ](#developement-api-)
+  - [Sommaire](#sommaire)
+- [Information](#information)
+- [Explication des api](#explication-des-api)
+  - [Clients](#clients)
+  - [Recette](#recette)
+  - [Restaurant](#restaurant)
+  - [Autre](#autre)
+- [Envoie de données](#envoie-de-données)
+  - [Commande](#commande)
+  - [Serveur](#serveur)
+  - [Table](#table)
+  - [Restaurant](#restaurant-1)
+  - [Recette](#recette-1)
+- [Test Unitaire](#test-unitaire)
+  - [Lancée les test](#lancée-les-test)
+  - [Crée une nouvelle classe de test](#crée-une-nouvelle-classe-de-test)
+- [Login](#login)
+  - [CLIENT](#client)
+    - [Reponse](#reponse)
+    - [success](#success)
+    - [fail](#fail)
+  - [STAFF](#staff)
+    - [Reponse](#reponse-1)
+    - [success](#success-1)
+    - [fail](#fail-1)
 
 ---
 # Information
@@ -106,7 +122,16 @@ table:
 
 ||Api |paramètre| Réponse | Disponibilité |
 |---|---|---|---|---|
-| POST | api/restaurant/Change/ | ID_RESTAURANT, NOM_RESTAURANT, ADRESSE_RESTAURANT, LOGO_RESTAURANT, BG_RESTAURANT, COULEUR_SITE | MAJ d'un restaurant|✅|
+| PUT | api/restaurant/Change/ | ID_RESTAURANT, NOM_RESTAURANT, ADRESSE_RESTAURANT, LOGO_RESTAURANT, BG_RESTAURANT, COULEUR_SITE | MAJ d'un restaurant|✅|
+
+## Recette
+
+||Api |paramètre| Réponse | Disponibilité |
+|---|---|---|---|---|
+| POST | api/recette/New/ |  ID_RESTAURANT, ID_CATEGORIE, NOM_RECETTE, DESCRIPTION_RECETTE, PHOTO_RECETTE, PRIXHT |ajout d'une recette|✅|
+| PUT | api/recette/Change/ | ID_RECETTE, ID_RESTAURANT, ID_CATEGORIE, NOM_RECETTE, DESCRIPTION_RECETTE, PHOTO_RECETTE, PRIXHT | modification d'une recette|✅|
+| DELETE | api/recette/Delete/ | ID_RECETTE  | Supprimer une recette |✅|
+
 
 # Test Unitaire
 
