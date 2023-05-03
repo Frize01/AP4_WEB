@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\RecetteController;
 use App\Http\Controllers\ServeurController;
 use App\Http\Controllers\CommandeController;
@@ -74,3 +75,13 @@ Route::post('/serveur/New/', [ServeurController::class, "ajoutServeur"]);
 Route::put('/serveur/Change/', [ServeurController::class, "MajServeur"]);
 //DELETE
 Route::delete('/serveur/Delete/', [ServeurController::class, "delServeur"]);
+
+//Table
+//GET
+Route::get('/Tables/{idRestaurant}', [TableController::class, "listeTable"]);
+//POST
+Route::post('/Table/New/', [TableController::class, "ajoutTable"]);
+//PUT
+Route::put('/Table/Change/', [TableController::class, "MajTable"]);
+//DELETE
+Route::delete('/Table/Delete/', [TableController::class, "delTable"]);

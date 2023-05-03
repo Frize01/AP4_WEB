@@ -26,6 +26,7 @@ class TABLECLIENT extends Model
 	protected $table = 'TABLE_CLIENTS';
 	public $incrementing = false;
 	public $timestamps = false;
+	public $primaryKey = 'ID_TABLE';
 
 	protected $casts = [
 		'ID_RESTAURANT' => 'int',
