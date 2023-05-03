@@ -33,6 +33,7 @@ class RECETTE extends Model
 	protected $table = 'RECETTE';
 	public $incrementing = false;
 	public $timestamps = false;
+	public $primaryKey = "ID_RECETTE";
 
 	protected $casts = [
 		'ID_RESTAURANT' => 'int',
