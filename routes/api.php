@@ -69,5 +69,5 @@ Route::post('/restaurant/Change/', [RestaurantController::class, "ChangeRestaura
 //Serveur
 Route::get('/serveurs/', [ServeurController::class, "listeServeur"]);
 Route::post('/serveur/New/', [ServeurController::class, "ajoutServeur"]);
-Route::patch('/serveur/Change/', [ServeurController::class, "MajServeur"]);
+Route::put('/serveur/Change/', [ServeurController::class, "MajServeur"]);
 Route::delete('/serveur/Delete/', [ServeurController::class, "delServeur"]);
