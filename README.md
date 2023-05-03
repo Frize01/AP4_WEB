@@ -9,20 +9,17 @@
   - [Developement API ](#developement-api-)
   - [Sommaire](#sommaire)
 - [Information](#information)
-- [Explication des api](#explication-des-api)
+- [Les API (GET)](#les-api-get)
   - [Clients](#clients)
   - [Recette](#recette)
   - [Restaurant](#restaurant)
   - [Autre](#autre)
-- [Envoie de données](#envoie-de-données)
+- [Les API (Envoie / modification / suppression de données)](#les-api-envoie--modification--suppression-de-données)
   - [Commande](#commande)
   - [Serveur](#serveur)
   - [Table](#table)
   - [Restaurant](#restaurant-1)
   - [Recette](#recette-1)
-- [Test Unitaire](#test-unitaire)
-  - [Lancée les test](#lancée-les-test)
-  - [Crée une nouvelle classe de test](#crée-une-nouvelle-classe-de-test)
 - [Login](#login)
   - [CLIENT](#client)
     - [Reponse](#reponse)
@@ -32,6 +29,9 @@
     - [Reponse](#reponse-1)
     - [success](#success-1)
     - [fail](#fail-1)
+- [Test Unitaire](#test-unitaire)
+  - [Lancée les test](#lancée-les-test)
+  - [Crée une nouvelle classe de test](#crée-une-nouvelle-classe-de-test)
 
 ---
 # Information
@@ -39,7 +39,9 @@
 Cette api a été developer avec php en utilisant le framework [laravel](https://laravel.com/)
 
 ---
-# Explication des api
+# Les API (GET)
+
+
 ## Clients
 |Api | Réponse| Disponibilité |
 |---|---|---|
@@ -88,7 +90,7 @@ table:
 | api/Tables/{idRestaurant}| liste des tables d'un restaurant |✅|
 
 ---
-# Envoie de données
+# Les API (Envoie / modification / suppression de données)
 
 ## Commande
 
@@ -116,7 +118,6 @@ table:
 | PUT | api/Table/Change/ | ID_TABLE, LIBELLE_TABLE, ID_RESTAURANT | modification d'une table|✅|
 | DELETE | api/Table/Delete/ | ID_TABLE, ID_RESTAURANT | Supprimer une table |✅|
 
-> \* pas obligatoire
 
 ## Restaurant
 
@@ -133,29 +134,12 @@ table:
 | DELETE | api/recette/Delete/ | ID_RECETTE  | Supprimer une recette |✅|
 
 
-# Test Unitaire
 
-## Lancée les test
-```bash
-.\vendor\bin\phpunit
-```
-
-## Crée une nouvelle classe de test
-
-```bash
-php artisan make:test NomTest
-```
-
-Dans la classe de test, bien faire attention à renommer les fonction avec test en debut
-
-```php
-public function test_liste_client()
-{
-    //test
-}
-```
----
 # Login
+
+les paramètres sont :
+- email
+- password
 
 ## CLIENT
 
@@ -207,3 +191,26 @@ Si le mot de passe est bon et l'utilisateur fait partie du staff d'un restaurant
 ### fail
 
 Un code 400 est renvoyer
+
+# Test Unitaire
+
+## Lancée les test
+```bash
+.\vendor\bin\phpunit
+```
+
+## Crée une nouvelle classe de test
+
+```bash
+php artisan make:test NomTest
+```
+
+Dans la classe de test, bien faire attention à renommer les fonction avec test en debut
+
+```php
+public function test_liste_client()
+{
+    //test
+}
+```
+---
