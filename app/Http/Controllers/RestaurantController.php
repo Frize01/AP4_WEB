@@ -33,4 +33,21 @@ class RestaurantController extends Controller
             }
         }
     }
+
+    function ChangeRestaurant(Request $request)
+    {
+        //recuperation du restorant
+        $Resto = RESTAURANT::where("ID_RESTAURANT","=",$request->id);
+
+        //MAJ des differente donnée
+        $Resto->ID_RESTAURANT = $request->ID_RESTAURANT;
+        $Resto->NOM_RESTAURANT = $request->ID_RESTAURANT;
+        $Resto->ADRESSE_RESTAURANT = $request->ADRESSE_RESTAURANT;
+        $Resto->LOGO_RESTAURANT = $request->LOGO_RESTAURANT;
+        $Resto->BG_RESTAURANT = $request->BG_RESTAURANT;
+        $Resto->COULEUR_SITE = $request->COULEUR_SITE;
+
+        //sauvegarde dans la bdd
+        $Resto->save();
+    }
 }
