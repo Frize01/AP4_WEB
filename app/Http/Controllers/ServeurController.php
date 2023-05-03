@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 
 class ServeurController extends Controller
 {
-    function listeServeur()
+    function listeServeur($idRestaurant)
     {
-        return response()->json(SERVEUR::all());
+        return response()->json(SERVEUR::where("ID_RESTAURANT","=",$idRestaurant)->get());
 
     }
 
