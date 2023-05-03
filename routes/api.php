@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecetteController;
+use App\Http\Controllers\ServeurController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\RestaurantController;
 
@@ -61,6 +62,9 @@ Route::post('/client/newFav/', [UserController::class, "newFavori"]);
 //login
 Route::post('/login/CLIENT/', [UserController::class, "loginCLIENT"]);
 Route::post('/login/STAFF/', [UserController::class, "loginSTAFF"]);
+
+//Restaurant
+Route::post('/restaurant/Change/', [RestaurantController::class, "ChangeRestaurant"]);
 
 //Serveur
 Route::get('/serveurs/', [ServeurController::class, "listeServeur"]);
