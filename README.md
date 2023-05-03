@@ -63,7 +63,7 @@ serveur:
 
 |Api | Réponse|Disponibilité |
 |---|---|---|
-| api/serveurs/| liste des serveur|✅|
+| api/serveurs/{idRestaurant}| liste des serveur d'un restaurant |✅|
 
 ---
 # Envoie de données
@@ -80,10 +80,11 @@ serveur:
 
 ||Api |paramètre| Réponse | Disponibilité |
 |---|---|---|---|---|
-| POST | api/serveur/New/ | id, name, email, password, id_restaurant |ajout d'un serveur||
-| UPDATE | api/serveur/Change/ | id, name, email, password, id_restaurant| modification d'un compte serveur||
-| DELETE | api/serveur/Delete/ | id | Supprimer un compte serveur ||
+| POST | api/serveur/New/ | name, email, password, ID_RESTAURANT |ajout d'un serveur|✅|
+| PUT | api/serveur/Change/ | ID, name, email, password*, ID_RESTAURANT| modification d'un compte serveur|✅|
+| DELETE | api/serveur/Delete/ | id | Supprimer un compte serveur |✅|
 
+> \* pas obligatoire
 ## Restaurant
 
 ||Api |paramètre| Réponse | Disponibilité |
