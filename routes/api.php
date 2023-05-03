@@ -51,7 +51,6 @@ Route::put('/recette/Change/', [RecetteController::class, "MajRecette"]);
 //DELETE
 Route::delete('/recette/Delete/', [RecetteController::class, "delRecette"]);
 
-
 //Client
 //GET
 Route::get('/clients/', [UserController::class, "listeUsers"]);
@@ -60,7 +59,7 @@ Route::get('/client/{idClient}/favori', [UserController::class, "listeFavori"]);
 Route::get('/client/{idClient}/commandes', [UserController::class, "listeCommande"]);
 Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "listeNonPayerCommande"]);
 
-//Staff
+//Commande
 //POST
 Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
 
