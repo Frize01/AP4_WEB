@@ -65,6 +65,12 @@ serveur:
 |---|---|---|
 | api/serveurs/{idRestaurant}| liste des serveur d'un restaurant |✅|
 
+table:
+
+|Api | Réponse|Disponibilité |
+|---|---|---|
+| api/Tables/{idRestaurant}| liste des tables d'un restaurant |✅|
+
 ---
 # Envoie de données
 
@@ -85,6 +91,17 @@ serveur:
 | DELETE | api/serveur/Delete/ | id | Supprimer un compte serveur |✅|
 
 > \* pas obligatoire
+
+## Table
+
+||Api |paramètre| Réponse | Disponibilité |
+|---|---|---|---|---|
+| POST | api/Table/New/ | ID_TABLE, LIBELLE_TABLE, ID_RESTAURANT |ajout d'une table|✅|
+| PUT | api/Table/Change/ | ID_TABLE, LIBELLE_TABLE, ID_RESTAURANT | modification d'une table|✅|
+| DELETE | api/Table/Delete/ | ID_TABLE, ID_RESTAURANT | Supprimer une table |✅|
+
+> \* pas obligatoire
+
 ## Restaurant
 
 ||Api |paramètre| Réponse | Disponibilité |
