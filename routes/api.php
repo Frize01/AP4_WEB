@@ -33,7 +33,7 @@ Route::get('/restaurant/{id}', [RestaurantController::class, "RestaurantInfo"]);
 Route::get('/restaurant/{id}/recettes/', [RestaurantController::class, "RecetteDansRestaurant"]);
 Route::get('/restaurant/staff/{id}', [RestaurantController::class, "StaffRestaurant"]);
 //POST
-Route::post('/restaurant/Change/', [RestaurantController::class, "ChangeRestaurant"]);
+Route::put('/restaurant/Change/', [RestaurantController::class, "ChangeRestaurant"]);
 
 //Recette
 //GET
