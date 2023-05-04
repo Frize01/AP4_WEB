@@ -99,7 +99,7 @@ table:
 |Api |paramètre| Réponse |Disponibilité |
 |---|---|---|---|
 | /api/client/newFav|ID, ID_RESTAURANT |Ajout de favoris|✅|
-| /api/client/newFav|ID, ID_RESTAURANT |suprimer favoris|✅|
+| /api/client/delFav|ID, ID_RESTAURANT |suprimer favoris|✅|
 
 ## Commande
 
