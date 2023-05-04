@@ -116,7 +116,7 @@ table:
 |---|---|---|---|---|
 | POST | api/serveur/New/ | name, email, password, ID_RESTAURANT |ajout d'un serveur|✅|
 | PUT | api/serveur/Change/ | ID, name, email, password*, ID_RESTAURANT| modification d'un compte serveur|✅|
-| DELETE | api/serveur/Delete/ | id | Supprimer un compte serveur |✅|
+| DELETE | api/serveur/Delete/ | ID | Supprimer un compte serveur |✅|
 
 > \* pas obligatoire
 
