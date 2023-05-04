@@ -67,7 +67,8 @@ class UserController extends Controller
 
     function UsersInfo($idClient)
     {
-        return response()->json(User::where("id", $idClient)->get());
+        $user = User::where("id", $idClient)->get();
+        return response()->json($user[0]);
     }
     function listeNonPayerCommande($idClient)
     {
@@ -194,7 +195,7 @@ class UserController extends Controller
         //recuperation des favoris
         $Favs = FAVORI::find($request->ID)->where("ID_RESTAURANT","=",$request->ID_RESTAURANT);
         $Favs->delete();
-        
+
         return response()->json("Favori bien supprimer",200);
     }
 }
