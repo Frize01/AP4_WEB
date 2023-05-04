@@ -61,7 +61,7 @@ Route::get('/client/{idClient}/NonPayerCommandes', [UserController::class, "list
 
 //Commande
 //POST
-Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
+Route::post('/commande', [CommandeController::class, "ajouterCommandeEmporter"]);
 
 //Client
 //POST

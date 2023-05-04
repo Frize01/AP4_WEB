@@ -107,7 +107,6 @@ table:
 |---|---|---|---|
 |||Creation commande a emporter||
 |||Creation commande sur place||
-|||||
 
 ## Serveur
 
