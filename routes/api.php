@@ -92,12 +92,12 @@ Route::put('/Table/Change/', [TableController::class, "MajTable"]);
 //DELETE
 Route::delete('/Table/Delete/', [TableController::class, "delTable"]);
 
-//Allergenes
-//GET
-Route::get('/Allergene/{idRestaurant}', [AllergeneController::class, "listeAllergene"]);
-//POST
-Route::post('/Allergene/New/', [AllergeneController::class, "ajoutAllergene"]);
-//PUT
-Route::put('/Allergene/Change/', [AllergeneController::class, "MajAllergene"]);
-//DELETE
-Route::delete('/Allergene/Delete/', [AllergeneController::class, "delAllergene"]);
+// //Allergenes
+// //GET
+// Route::get('/Allergene/{idRestaurant}', [AllergeneController::class, "listeAllergene"]);
+// //POST
+// Route::post('/Allergene/New/', [AllergeneController::class, "ajoutAllergene"]);
+// //PUT
+// Route::put('/Allergene/Change/', [AllergeneController::class, "MajAllergene"]);
+// //DELETE
+// Route::delete('/Allergene/Delete/', [AllergeneController::class, "delAllergene"]);

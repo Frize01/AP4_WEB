@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ALLERGENE;
 use Illuminate\Http\Request;
 
-class AllergeneControleur extends Controller
+class AllergeneController extends Controller
 {
     function listeAllergene($idRestaurant)
     {

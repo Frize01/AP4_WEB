@@ -97,7 +97,7 @@ class UserController extends Controller
 
     function newFavori(Request $request)
     {
-        $tmpFav = new FAVORI();
+        $tmpFav = new FAVORI;
 
         $tmpFav->ID = $request->ID;
         $tmpFav->ID_RESTAURANT = $request->ID_RESTAURANT;
