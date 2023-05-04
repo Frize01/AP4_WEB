@@ -57,7 +57,7 @@
         @foreach ($commandesEmporterServeur as $commande)
             <li class="py-2 flex items-center justify-between">
             <div class="flex items-center">
-                <span class="font-medium">Client {{ $commande->ID }}</span>
+                <span class="font-medium">Client {{ $commande->ID }} - {{$commande->PRIX_COMMANDE}}€</span>
             </div>
             <div class="flex items-center">
                 <form method="POST" action="/validation_commande">

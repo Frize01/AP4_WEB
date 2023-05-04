@@ -10,7 +10,7 @@
             Ils doivent également accepter toutes les conditions générales d'utilisation avant d'utiliser notre service.</p>
         <br></br>
         <p>2 - Frais et paiements : Les frais pour l'utilisation de notre service seront clairement indiqués sur le site Web. 
-            Les paiements doivent être effectués au moment de la commande. Nous acceptons les paiements par carte de crédit et PayPal. Nous nous réservons le droit de modifier les frais à tout moment.</p>
+            Les paiements doivent être effectués au moment de la commande. Les modes de paiements sont propres à chaque restaurant. Les restaurants se réservent le droit de modifier leurs frais à tout moment.</p>
         <br></br>
         <p>3 - Annulation de commande : Les utilisateurs peuvent annuler leur commande à tout moment avant la confirmation de la commande par le restaurant. Si la commande est déjà en cours de préparation ou a été livrée, les annulations ne seront pas acceptées. 
             Les annulations seront soumises à une politique de remboursement déterminée par chaque restaurant.</p>
