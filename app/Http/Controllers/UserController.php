@@ -188,4 +188,13 @@ class UserController extends Controller
         //retour de l'api
         return response()->json($retour,$code);
     }
+
+    function delFavori(Request $request)
+    {
+        //recuperation des favoris
+        $Favs = FAVORI::find($request->ID)->where("ID_RESTAURANT","=",$request->ID_RESTAURANT);
+        $Favs->delete();
+        
+        return response()->json("Favori bien supprimer",200);
+    }
 }

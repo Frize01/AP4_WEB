@@ -66,6 +66,8 @@ Route::post('/commande', [CommandeController::class, "ajouterCommande"]);
 //Client
 //POST
 Route::post('/client/newFav/', [UserController::class, "newFavori"]);
+//DELETE
+Route::delete('/client/delFav/', [UserController::class, "delFavori"]);
 
 //login
 //POST
