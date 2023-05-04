@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::get('/restaurant', [restaurantController::class, 'RestaurantList']);
 Route::get('/restaurant/{id}', [restaurantController::class, 'RestaurantTemplate']);
+Route::get('/condition', [restaurantController::class, 'Condition']);
 
 Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard/commande_sur_place', [ServeurController::class, 'commandeDashboard'])->middleware(['auth', 'verified']);

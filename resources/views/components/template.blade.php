@@ -107,20 +107,20 @@
         <footer class="p-4 bg-[{{$couleur}}] sm:p-6 sticky top-[100vh]">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="http://127.0.0.1:8000/" class="flex items-center">
+                    <a href="/" class="flex items-center">
                         <img src="{{ asset('images/logo-ration-t.png') }}" class="mr-3 h-8" alt="FlowBite Logo" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap">Ration</span>
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 pr-8 ">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Services</h2>
                         <ul class="text-gray-600">
                             <li class="mb-4">
-                                <a href="http://127.0.0.1:8000/" class="hover:underline">Ration</a>
+                                <a href="/" class="hover:underline">Ration</a>
                             </li>
                             <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                <a href="/restaurant" class="hover:underline">Liste des restaurants</a>
                             </li>
                         </ul>
                     </div>
@@ -136,13 +136,10 @@
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Légal</h2>
                         <ul class="text-gray-600">
-                            <li class="mb-4">
-                                <a href="#" class="hover:underline">Politique de confidentialité</a>
-                            </li>
                             <li>
-                                <a href="#" class="hover:underline">Condition d'utilisation</a>
+                                <a href="/condition" class="hover:underline">Condition de vente et d'utilisation</a>
                             </li>
                         </ul>
                     </div>

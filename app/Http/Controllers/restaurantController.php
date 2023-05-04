@@ -36,4 +36,9 @@ class restaurantController extends Controller
               ->get();
     }
 
+    function Condition()
+    {
+        return view('condition');
+    }
+
 }

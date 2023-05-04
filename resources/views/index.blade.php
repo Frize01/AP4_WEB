@@ -6,8 +6,7 @@
     <br></br>
       <h2 class="mb-4 text-2xl ml-4 font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl">Car vos repas méritent d'être connus.. Prenez Ration</h2>
       <br></br>
-      <button class="ml-6 bg-white border-2 font-bold py-2 px-4 rounded">Trouvez le restaurant qui vous correspond</button>
-      <button class="ml-2 bg-white border-2 font-bold py-2 px-4 rounded">En savoir plus sur nos services</button>
+      <a href="/restaurant"><button class="ml-6 bg-white border-2 font-bold py-2 px-4 rounded">Trouvez le restaurant qui vous correspond</button></a>
   <br></br>
   <br></br>
   </div>
