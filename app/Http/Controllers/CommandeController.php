@@ -7,6 +7,7 @@ use App\Models\COMMANDE;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AEMPORTER;
+use App\Models\RECETTE;
 use App\Models\COMPOSER;
 
 class CommandeController extends Controller
@@ -22,7 +23,7 @@ class CommandeController extends Controller
         $commande->ID_TYPE_TVA = 2;
         $commande->ID_TVA = 2;
         $commande->DATE_COMMANDE = date_create()->format('Y-m-d H:i:s');
-        $commande->PRIX_COMMANDE = $request->prix;
+        $commande->PRIX_COMMANDE = RECETTE::find($request->ID_RECETTE)->PRIXHT;//$request->prix;
         $commande->DATE_REGLEMENT_COMMANDE = null;
 
         //Remplie le a emporter
