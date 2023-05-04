@@ -82,8 +82,8 @@
     <table class="min-w-full divide-y divide-gray-200 border">
         <thead>
             <tr>
-                <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Recette</th>
-                <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Prix</th>
+                <th class="px-6 py-4 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Recette</th>
+                <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Prix</th>
                 <th class="px-6 py-3 bg-gray-50"></th>
             </tr>
         </thead>
@@ -95,14 +95,19 @@
                             <form method="POST" action="/supprimer_produit">
                                 @csrf
                                 <input type="hidden" name="produit" value="{{$i}}">
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $recette->NOM_RECETTE }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">{{ $recette->PRIXHT }}€</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">{{ $recette->NOM_RECETTE }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center">{{ $recette->PRIXHT }}€</td>
                                 <td><button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">Enlever</button></td>
                             </form>
                         </tr>
                     @endif
                 @endforeach
             @endfor
+            <tr class="min-w-full divide-y divide-gray-200 border">
+                <td class="px-6 py-4 whitespace-nowrap text-center"><b>Prix total</b></td>
+                <td class="px-6 py-4 whitespace-nowrap text-center"><b>{{session()->get('prix')}}€</b></td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
     <br></br>
