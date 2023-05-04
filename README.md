@@ -105,8 +105,10 @@ table:
 
 |Api |paramètre| Réponse |Disponibilité |
 |---|---|---|---|
-|/api/commande|idUser, prix, description, ID_RESTAURANT, ID_RECETTE |Creation commande a emporter|✅|
+|/api/commande|idUser, prix, description*, ID_RESTAURANT, ID_RECETTE |Creation commande a emporter|✅|
 |||Creation commande sur place||
+
+> \* pas obligatoire
 
 ## Serveur
 

@@ -32,7 +32,10 @@ class CommandeController extends Controller
         $a_emporter->ID = $request->idUser; 
         $a_emporter->ID_COMMANDE = $commande->ID_COMMANDE;
         $a_emporter->ID_RESTAURANT = $request->ID_RESTAURANT;
-        $a_emporter->DESCRIPTION_COMMANDE = $request->description;
+        if($request->description != null)
+        {
+            $a_emporter->DESCRIPTION_COMMANDE = $request->description;
+        }
         $a_emporter->RECUPERER = 0;
         $a_emporter->HEURE_RECUP_COMMANDE = null;
 
