@@ -90,8 +90,16 @@ table:
 |---|---|---|
 | api/Tables/{idRestaurant}| liste des tables d'un restaurant |✅|
 
+
 ---
 # Les API (Envoie / modification / suppression de données)
+
+## Favori
+
+|Api |paramètre| Réponse |Disponibilité |
+|---|---|---|---|
+| /api/client/newFav|ID, ID_RESTAURANT |Ajout de favoris|✅|
+| /api/client/newFav|ID, ID_RESTAURANT |suprimer favoris|✅|
 
 ## Commande
 
