@@ -8,6 +8,7 @@ use App\Models\CLIENT;
 use App\Models\FAVORI;
 use App\Models\COMMANDE;
 use App\Models\RESTAURANT;
+use App\Models\TVA;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -41,17 +42,56 @@ class UserController extends Controller
 
     function listeCommande($idClient)
     {
-        return response()->json(COMMANDE::where('id', $idClient)->get());
+        
+        $commandes = COMMANDE::where('id', $idClient)->get();
+        
+        $data = [];
+        
+        foreach($commandes as $command)
+        {
+            $tva = TVA::find($command->ID_TVA);
+
+            $prix = $command->PRIX_COMMANDE;
+
+            $prixT = $prix * $tva->POURCENTAGE_TVA;
+
+            $tmp = [$command,"prixTT" => $prixT];
+
+            array_push($data, $tmp);
+
+        }
+
+        return response()->json($data,200);
+
     }
+
     function UsersInfo($idClient)
     {
         return response()->json(User::where("id", $idClient)->get());
     }
     function listeNonPayerCommande($idClient)
     {
-        return response()->json(COMMANDE::where('ID', "=", $idClient)
+        $commandes = COMMANDE::where('ID', "=", $idClient)
             ->where('DATE_REGLEMENT_COMMANDE', "=", null)
-            ->get());
+            ->get();
+
+        $data = [];
+
+        foreach($commandes as $command)
+        {
+            $tva = TVA::find($command->ID_TVA);
+
+            $prix = $command->PRIX_COMMANDE;
+
+            $prixT = $prix * $tva->POURCENTAGE_TVA;
+
+            $tmp = [$command,"prixTT" => $prixT];
+
+            array_push($data, $tmp);
+
+        }
+
+        return response()->json($data,200);
     }
     //Write data on database
 

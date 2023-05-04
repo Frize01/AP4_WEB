@@ -28,6 +28,7 @@ class TVA extends Model
 	protected $table = 'TVA';
 	public $incrementing = false;
 	public $timestamps = false;
+	public $primaryKey = 'ID_TVA';
 
 	protected $casts = [
 		'ID_TYPE_TVA' => 'int',
